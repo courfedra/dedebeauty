@@ -1,7 +1,7 @@
 export const Footer =()=>{
     return(
         <footer>
-            Footer
+            Footer de prueba
         </footer>
     )
 }
