@@ -1,0 +1,12 @@
+.sesion{
+    width:20%;
+    display:flex;
+    justify-content: end;
+    align-items: center;
+}
+.anchor-sesion{
+    padding: 0 .5em;
+}
+.anchor-sesion a:hover{
+    color: var(--naranja);
+}

@@ -1,0 +1,7 @@
+header{
+    background-color:var(--blanco);
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
