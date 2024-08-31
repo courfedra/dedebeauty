@@ -1,5 +1,5 @@
 export const Blog = () => {
     return(
-        <h1> Blog </h1>
+        <h1 style={{height:'100vh'}}> Blog </h1>
     )
 }

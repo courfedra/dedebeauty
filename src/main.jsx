@@ -2,7 +2,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { Auth0Provider } from '@auth0/auth0-react';
 import App from "./App";
-import "./normalize.css"
+import "./normalize.css";
+import "./colores.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

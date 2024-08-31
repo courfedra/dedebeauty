@@ -15,6 +15,7 @@ export const Footer =()=>{
                     return(
                         <Link
                         className="linkFooter"
+                        onClick={()=>{scrollTo(top)}}
                         key={NavbarMenu.indexOf(e)}
                         to={e.path}>
                             {e.name}

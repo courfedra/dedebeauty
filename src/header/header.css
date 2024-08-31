@@ -2,6 +2,14 @@ header{
     background-color:var(--blanco);
     width:100%;
     display:flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+}
+.logoHeader{
+    filter:drop-shadow(0 0 .25em var(--marron));
+    transition: all .25s ease-in-out;
+    margin:0 12px;
+}
+.logoHeader:hover{
+    filter:drop-shadow(0 0 .5em var(--marron));
 }
