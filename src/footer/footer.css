@@ -1,0 +1,17 @@
+footer{
+    background-color: var(--gris);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoFooter{
+    padding: 12px 48px;
+    filter:grayscale(1) drop-shadow(0 0 .75em var(--rosa));;
+
+}
+.ulFooter{
+    display:flex;
+    flex-direction: column;
+    background-color: red;
+}
