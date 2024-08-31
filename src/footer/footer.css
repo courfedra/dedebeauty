@@ -40,6 +40,7 @@ footer{
     align-items: start;
 }
 .redesFooter i {
+    transition: all .1s ease-in-out;
     padding: 4px 0;
     font-size: 24px;
     display: flex;
@@ -56,4 +57,5 @@ footer{
 .redesFooter i:hover{
     color: var(--marron);
     cursor: pointer;
+    transform: translateX(4px);
 }
