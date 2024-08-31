@@ -7,11 +7,11 @@ footer{
 }
 .logoFooter{
     padding: 12px 48px;
-    filter:grayscale(1) drop-shadow(0 0 .75em var(--rosa));
+    filter:grayscale(1) drop-shadow(0 0 .25em var(--marron));
     transition: all .1s ease-in-out;
 }
 .logoFooter:hover{
-    filter:grayscale(1) drop-shadow(0 0 1em var(--rosa));
+    filter:grayscale(1) drop-shadow(0 0 .25em var(--marron));
 }
 .navbarFooter{
     width:75%;
@@ -27,7 +27,9 @@ footer{
     line-height: 1.25em;
 }
 .linkFooter{
-    font-size: .8em;
+    font-size: .9em;
+    letter-spacing: .5px;
+    color: var(--blanco);
 }
 .redesFooter{
     padding: 12px 48px;
@@ -43,11 +45,13 @@ footer{
     display: flex;
     align-items: center;
     justify-content: start;
+    color: var(--blanco);
 
 }
 .redesFooter i p{
     font-size: 12px;
     padding: 4px 8px;
+    letter-spacing: 1.5px;
 }
 .redesFooter i:hover{
     color: var(--marron);
