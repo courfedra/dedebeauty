@@ -9,21 +9,7 @@ export const Footer =()=>{
             <div className="logoFooter">
                 <Logo/>
             </div>
-            <div>
-                <ul className="ulFooter">
-                {NavbarMenu.map((e)=>{
-                    return(
-                        <Link
-                        className="linkFooter"
-                        key={NavbarMenu.indexOf(e)}
-                        to={e.path}>
-                            {e.name}
-                        </Link>
-                    )
-                    })}
-                </ul>
-            </div>
-            <div>
+            <div className="navbarFooter">
                 <ul className="ulFooter">
                 {NavbarMenu.map((e)=>{
                     return(
@@ -38,9 +24,15 @@ export const Footer =()=>{
                 </ul>
             </div>
             <div className="redesFooter">
-                <p>Instagram</p>
-                <p>Whatsapp</p>
-                <p>Correo</p>
+                <i className="fa-brands fa-whatsapp">
+                    <p>+54 9 263 4758576</p>
+                </i>
+                <i class="fa-brands fa-instagram">
+                    <p>@dedebeauty</p>
+                </i>
+                <i class="fa-solid fa-at">
+                    <p>dedebeauty@gmail.com</p>
+                </i>
 
             </div>
         </footer>

@@ -13,7 +13,14 @@ footer{
 .logoFooter:hover{
     filter:grayscale(1) drop-shadow(0 0 1em var(--rosa));
 }
+.navbarFooter{
+    width:75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .ulFooter{
+    width: 50%;
     display:flex;
     flex-direction: column;
     align-items: start;
@@ -23,12 +30,26 @@ footer{
     font-size: .8em;
 }
 .redesFooter{
-    background-color:red;
     padding: 12px 48px;
     display:flex;
-    align-items: start;
+    flex-direction: column;
     width: 25%;
     justify-content: space-around;
+    align-items: start;
+}
+.redesFooter i {
+    padding: 4px 0;
+    font-size: 24px;
+    display: flex;
     align-items: center;
-    line-height: .5em;
+    justify-content: start;
+
+}
+.redesFooter i p{
+    font-size: 12px;
+    padding: 4px 8px;
+}
+.redesFooter i:hover{
+    color: var(--marron);
+    cursor: pointer;
 }
