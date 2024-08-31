@@ -27,10 +27,10 @@ export const Footer =()=>{
                 <i className="fa-brands fa-whatsapp">
                     <p>+54 9 263 1234567</p>
                 </i>
-                <i class="fa-brands fa-instagram">
+                <i className="fa-brands fa-instagram">
                     <p>@dedebeauty</p>
                 </i>
-                <i class="fa-solid fa-at">
+                <i className="fa-solid fa-at">
                     <p>dedebeauty@gmail.com</p>
                 </i>
 

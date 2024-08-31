@@ -4,7 +4,7 @@ export const Logo =()=>{
     return(
         <div>
             <Link to="/">
-                <img src={logoDede} alt="Logo DeDe" style={{width:"125px"}}/>
+                <img className="logoHeader" src={logoDede} alt="Logo DeDe" style={{width:"125px"}}/>
             </Link>
         </div>
     )

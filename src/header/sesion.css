@@ -10,3 +10,15 @@
 .anchor-sesion a:hover{
     color: var(--naranja);
 }
+.profile-sesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-sesion p{
+    font-size: 1.25em;
+}
+.profile-sesion p span{
+    color: var(--marron);
+}
