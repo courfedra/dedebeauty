@@ -14,6 +14,7 @@ export const Footer =()=>{
                 {NavbarMenu.map((e)=>{
                     return(
                         <Link
+                        className="linkFooter"
                         key={NavbarMenu.indexOf(e)}
                         to={e.path}>
                             {e.name}
@@ -23,7 +24,24 @@ export const Footer =()=>{
                 </ul>
             </div>
             <div>
-                redes
+                <ul className="ulFooter">
+                {NavbarMenu.map((e)=>{
+                    return(
+                        <Link
+                        className="linkFooter"
+                        key={NavbarMenu.indexOf(e)}
+                        to={e.path}>
+                            {e.name}
+                        </Link>
+                    )
+                    })}
+                </ul>
+            </div>
+            <div className="redesFooter">
+                <p>Instagram</p>
+                <p>Whatsapp</p>
+                <p>Correo</p>
+
             </div>
         </footer>
     )

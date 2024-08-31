@@ -7,11 +7,28 @@ footer{
 }
 .logoFooter{
     padding: 12px 48px;
-    filter:grayscale(1) drop-shadow(0 0 .75em var(--rosa));;
-
+    filter:grayscale(1) drop-shadow(0 0 .75em var(--rosa));
+    transition: all .1s ease-in-out;
+}
+.logoFooter:hover{
+    filter:grayscale(1) drop-shadow(0 0 1em var(--rosa));
 }
 .ulFooter{
     display:flex;
     flex-direction: column;
-    background-color: red;
+    align-items: start;
+    line-height: 1.25em;
+}
+.linkFooter{
+    font-size: .8em;
+}
+.redesFooter{
+    background-color:red;
+    padding: 12px 48px;
+    display:flex;
+    align-items: start;
+    width: 25%;
+    justify-content: space-around;
+    align-items: center;
+    line-height: .5em;
 }
