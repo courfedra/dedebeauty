@@ -6,35 +6,41 @@ import { NavbarMenu } from "../RoutesConfig";
 export const Footer =()=>{
     return(
         <footer>
-            <div className="logoFooter">
-                <Logo/>
-            </div>
-            <div className="navbarFooter">
-                <ul className="ulFooter">
-                {NavbarMenu.map((e)=>{
-                    return(
-                        <Link
-                        className="linkFooter"
-                        onClick={()=>{scrollTo(top)}}
-                        key={NavbarMenu.indexOf(e)}
-                        to={e.path}>
-                            {e.name}
-                        </Link>
-                    )
-                    })}
-                </ul>
-            </div>
-            <div className="redesFooter">
-                <i className="fa-brands fa-whatsapp">
-                    <p>+54 9 263 1234567</p>
-                </i>
-                <i className="fa-brands fa-instagram">
-                    <p>@dedebeauty</p>
-                </i>
-                <i className="fa-solid fa-at">
-                    <p>dedebeauty@gmail.com</p>
-                </i>
+            <div className="footerUp">
+                <div className="logoFooter">
+                    <Logo/>
+                </div>
+                <div className="navbarFooter">
+                    <ul className="ulFooter">
+                    {NavbarMenu.map((e)=>{
+                        return(
+                            <Link
+                            className="linkFooter"
+                            onClick={()=>{scrollTo(top)}}
+                            key={NavbarMenu.indexOf(e)}
+                            to={e.path}>
+                                {e.name}
+                            </Link>
+                        )
+                        })}
+                    </ul>
+                </div>
+                <div className="redesFooter">
+                    <i className="fa-brands fa-whatsapp">
+                        <p>+54 9 263 1234567</p>
+                    </i>
+                    <i className="fa-brands fa-instagram">
+                        <p>@dedebeauty</p>
+                    </i>
+                    <i className="fa-solid fa-at">
+                        <p>dedebeauty@gmail.com</p>
+                    </i>
 
+                </div>
+            </div>
+            <div className="footerDown">
+                <p>Todos los derechos reservados</p>
+                <p>Web creada por Courfedra- Francisco Andres</p>
             </div>
         </footer>
     )

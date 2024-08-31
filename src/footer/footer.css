@@ -1,9 +1,21 @@
-footer{
+.footerUp{
     background-color: var(--gris);
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+.footerDown{
+    background-color: var(--gris);
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footerDown p{
+    letter-spacing: 2px;
+    text-transform: capitalize;
 }
 .logoFooter{
     padding: 12px 24px;
