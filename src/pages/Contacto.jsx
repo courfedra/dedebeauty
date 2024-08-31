@@ -1,5 +1,5 @@
 export const Contacto = () => {
   return (
-    <p> Contacto </p>
+    <h1> Contacto </h1>
   )
 }

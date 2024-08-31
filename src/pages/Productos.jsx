@@ -1,5 +1,5 @@
 export const Productos = () => {
     return(
-        <p> Productos </p>
+        <h1> Productos </h1>
     )
 }

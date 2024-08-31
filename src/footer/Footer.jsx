@@ -25,7 +25,7 @@ export const Footer =()=>{
             </div>
             <div className="redesFooter">
                 <i className="fa-brands fa-whatsapp">
-                    <p>+54 9 263 4758576</p>
+                    <p>+54 9 263 1234567</p>
                 </i>
                 <i class="fa-brands fa-instagram">
                     <p>@dedebeauty</p>
