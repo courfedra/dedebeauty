@@ -30,20 +30,14 @@ const Profile=()=>{
     )
 }
 
-
-
-
-
-
 export const Sesion =()=>{
     const {isAuthenticated} = useAuth0()
     return(
         isAuthenticated
-    ?<Profile/>
-    :<div className="sesion">
-        <Login/>
-        <Register/>
-    </div>
-        
+        ?<Profile/>
+        :<div className="sesion">
+            <Login/>
+            <Register/>
+        </div>
     )
 }

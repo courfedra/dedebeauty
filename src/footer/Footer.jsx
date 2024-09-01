@@ -8,7 +8,7 @@ export const Footer =()=>{
         <footer>
             <div className="footerUp">
                 <div className="logoFooter">
-                    <Logo/>
+                    <Logo tamaño="150px"/>
                 </div>
                 <div className="navbarFooter">
                     <ul className="ulFooter">

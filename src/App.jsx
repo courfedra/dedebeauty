@@ -6,7 +6,7 @@ import {Footer} from "./footer/Footer"
 function App() {
   return(
     <BrowserRouter basename="/">
-      <Header/>
+      <Header />
       <Routes>
         {NavbarMenu.map((e)=>{
           return(
@@ -20,3 +20,5 @@ function App() {
 }
 
 export default App
+
+
