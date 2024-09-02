@@ -1,6 +1,6 @@
 .card{
-    border: 1px solid black;
     margin:8px 12px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,6 +8,8 @@
     padding: 8px 12px;
     min-width:400px;
     min-height: 400px;
+    background-color: var(--rosa);
+    box-shadow: 0px 0px 10px 1.5px var(--gris);
 }
 .card-top{
     display: flex;
@@ -15,25 +17,33 @@
     overflow: hidden;
     justify-content: space-between;
 }
-.card img{
-    max-height: 200px;
-}
-.img-descuento{
+.card-top .img-descuento{
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-radius: 12px;
 }
-.img-descuento-ribbon{
+.card-top .img-descuento .img-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+.card-top .img-descuento-ribbon{
     position: absolute;
     text-align: center;
+    display: flex;
+    justify-content: center;
     width: 100px;
     top:0px;
     right:-25px;
-    transform: rotateZ(45deg);
     background-color: var(--marron);
+    transform: rotateZ(45deg);
 }
 .card-top .card-top_brand-name{
     display: flex;
@@ -46,17 +56,37 @@
 }
 .card-description{
     width: 100%;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: justify;
 }
+.card-description .description{
+    margin: 24px 0;
+    font-size: 18px;
+    width: 75%;
+    text-align: center;
+}
+.card-description .category{
+    text-decoration: dotted;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 16px;
+    color:var(--marron);
+    margin-bottom:24px;
+}
+.card-description .category:hover{
+    color:var(--gris)
+}
 .card-price{
-    width:100%;
+    width:80%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px dashed var(--gris);
+    border-radius: 16px;
 }
 .card-price-precio{
     display: flex;
@@ -72,7 +102,7 @@
     color: var(--gris);
 }
 .card-price-precio .precio-descuento{
-    font-size: 1.25em;
+    font-size: 1.5em;
 }
 .card-buy-true{
     display:flex;
@@ -81,6 +111,18 @@
 }
 .card-buy-true p{
     color:var(--negro);
+}
+.card-buy-true button{
+    border:none;
+    background-color: var(--naranja);
+    border-radius: 16px;
+    width:50%;
+    margin:8px 0;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+}
+.card-buy-true button:hover{
+    background-color: var(--blanco);
 }
 .card-buy-false p{
     color:red;

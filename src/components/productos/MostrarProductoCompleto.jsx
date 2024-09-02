@@ -8,17 +8,18 @@ export const MostrarProductoCompleto = ({producto}) => {
         <div className="card">
             <div className="card-top">
                 <div className="img-descuento">
-                    <img src={producto.foto} alt={producto.marca}/>
-                    {producto.descuento.hayDescuento&&<p className="img-descuento-ribbon">-{producto.descuento.totalDescuento}%</p>}
+                    <div className="img-box" style={{backgroundImage:`url(${producto.foto})`}}>
+                        {producto.descuento.hayDescuento&&<p className="img-descuento-ribbon">-{producto.descuento.totalDescuento}%</p>}
+                    </div>
                 </div>
                 <div className="card-top_brand-name">
-                    <p>{producto.marca}</p>
-                    <p>{producto.nombre}</p>
+                    <h2>{producto.marca}</h2>
+                    <h3>{producto.nombre}</h3>
                 </div>
             </div>
             <div className="card-description">
-                <p>{producto.descripcion}</p>
-                <p>{producto.categoria}</p>
+                <p className="description">{producto.descripcion}</p>
+                <a href="#" className="category">{producto.categoria}</a>
             </div>
             <div className="card-price">
                 {producto.descuento.hayDescuento

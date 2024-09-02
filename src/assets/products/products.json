@@ -1,8 +1,8 @@
 [
     {
-        "marca":"Con Descuento",
-        "nombre":"nombre1",
-        "descripcion":"descripcion1",
+        "marca":"L'oreal",
+        "nombre":"Mascara de pestaña",
+        "descripcion":"Mascara de pestaña aprueba de agua color Rouge 201",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
         "precio":2000,
         "descuento":{
