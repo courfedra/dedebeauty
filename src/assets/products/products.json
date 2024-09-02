@@ -16,7 +16,7 @@
         "marca":"Sin Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
-        "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
+        "foto":"https://img.freepik.com/foto-gratis/arreglo-suero-planta_23-2148899353.jpg",
         "precio":1000,
         "descuento":{
             "hayDescuento":false,
@@ -29,7 +29,7 @@
         "marca":"Con Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
-        "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
+        "foto":"https://img.freepik.com/foto-gratis/arreglo-suero-planta_23-2148899353.jpg",
         "precio":42250,
         "descuento":{
             "hayDescuento":true,

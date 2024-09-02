@@ -16,12 +16,11 @@
     justify-content: space-between;
 }
 .card img{
-    width: 150px;
+    max-height: 200px;
 }
 .img-descuento{
     position: relative;
     overflow: hidden;
-    width: 50%;
 }
 .img-descuento-ribbon{
     position: absolute;
@@ -71,8 +70,13 @@
 .card-price-precio .precio-descuento{
     font-size: 1.25em;
 }
+.card-buy-true{
+    display:flex;
+    width: 100%;
+    justify-content: space-around;
+}
 .card-buy-true p{
-    color:var(--negro)
+    color:var(--negro);
 }
 .card-buy-false p{
     color:red;
