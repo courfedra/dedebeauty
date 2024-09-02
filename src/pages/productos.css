@@ -1,6 +1,16 @@
-.productos{
+.section-productos{
     background-color: var(--rosa);
+    padding: 0 5em;
     display: flex;
-    padding: .5em 1.5em;
     flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+}
+.productos{
+    background-color: var(--naranja);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(400px, auto);
+    grid-auto-flow: row dense;
 }

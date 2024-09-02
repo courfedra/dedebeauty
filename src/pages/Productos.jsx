@@ -4,11 +4,13 @@ import { MostrarProductoCompleto } from "../components/productos/MostrarProducto
 
 export const Productos = () => {
     return(
-        <section className="productos">
-            {productos.map((e)=>{
-                return(<MostrarProductoCompleto producto={e} />)
-            })
-            }
+        <section className="section-productos">
+            <div className="productos">
+                {productos.map((e)=>{
+                    return(<MostrarProductoCompleto producto={e} />)
+                })
+                }
+            </div>
         </section>
     )
 }
