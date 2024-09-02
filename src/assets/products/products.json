@@ -1,6 +1,6 @@
 [
     {
-        "marca":"marca1",
+        "marca":"Con Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
@@ -9,90 +9,98 @@
             "hayDescuento":true,
             "totalDescuento":10
         },
-        "stock":1
+        "stock":1,
+        "categoria":"perfume"
     },
     {
-        "marca":"marca1",
+        "marca":"Sin Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
         "precio":1000,
         "descuento":{
             "hayDescuento":false,
-            "totalDescuento":"porcentaje1"
+            "totalDescuento":0
         },
-        "stock":2
+        "stock":2,
+        "categoria":"perfume"
     },
     {
-        "marca":"marca1",
+        "marca":"Con Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
-        "precio":"precio1",
+        "precio":42250,
         "descuento":{
             "hayDescuento":true,
-            "totalDescuento":"porcentaje1"
+            "totalDescuento":23
         },
-        "stock":0
+        "stock":0,
+        "categoria":"perfume"
     },
     {
-        "marca":"marca1",
+        "marca":"Con Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
-        "precio":"precio1",
+        "precio":110000,
         "descuento":{
             "hayDescuento":true,
-            "totalDescuento":"porcentaje1"
+            "totalDescuento":90
         },
-        "stock":"cantidad1"
+        "stock":5,
+        "categoria":"perfume"
     },
     {
-        "marca":"marca1",
+        "marca":"Con Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
-        "precio":"precio1",
+        "precio":4500,
         "descuento":{
             "hayDescuento":true,
-            "totalDescuento":"porcentaje1"
+            "totalDescuento":5
         },
-        "stock":"cantidad1"
+        "stock":0,
+        "categoria":"perfume"
     },
     {
-        "marca":"marca1",
+        "marca":"Sin Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
-        "precio":"precio1",
+        "precio":35000,
         "descuento":{
-            "hayDescuento":true,
-            "totalDescuento":"porcentaje1"
+            "hayDescuento":false,
+            "totalDescuento":25
         },
-        "stock":"cantidad1"
+        "stock":4,
+        "categoria":"perfume"
     },
     {
-        "marca":"marca1",
+        "marca":"Sin Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
-        "precio":"precio1",
+        "precio":12000,
         "descuento":{
-            "hayDescuento":true,
-            "totalDescuento":"porcentaje1"
+            "hayDescuento":false,
+            "totalDescuento":40
         },
-        "stock":"cantidad1"
+        "stock":8,
+        "categoria":"perfume"
     },
     {
-        "marca":"marca1",
+        "marca":"Con Descuento",
         "nombre":"nombre1",
         "descripcion":"descripcion1",
         "foto":"https://www.shutterstock.com/image-photo/cosmetic-essence-glass-bottle-pipette-600nw-2425456873.jpg",
-        "precio":"precio1",
+        "precio":1200,
         "descuento":{
             "hayDescuento":true,
-            "totalDescuento":"porcentaje1"
+            "totalDescuento":15
         },
-        "stock":"cantidad1"
+        "stock":0,
+        "categoria":"perfume"
     }
 ]

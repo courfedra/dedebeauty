@@ -3,47 +3,4 @@
     display: flex;
     padding: .5em 1.5em;
     flex-wrap: wrap;
-
-}
-.card{
-    border: 1px solid black;
-    margin:8px 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 12px;
-}
-.card-top{
-    background-color: red;
-    display: flex;
-}
-.card img{
-    width:50%;
-    padding: 4px;
-}
-.card-top .card-top_brand-name{
-    background-color: green;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-.card-description{
-    background-color: orangered;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-}
-.card-price{
-    background-color: violet;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
 }
