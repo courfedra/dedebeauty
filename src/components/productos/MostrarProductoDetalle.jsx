@@ -1,6 +1,9 @@
 import productos from "../../assets/products/products.json"
 import { useParams } from "react-router-dom"
 import { useState,useEffect } from "react";
+import "./mostrarProductoDetalle.css";
+import { ProductoDetalle } from "./ProductoDetalle";
+
 export const MostrarProductoDetalle=()=>{
     const [productoEncontrado,setProductoEncontrado] = useState()
     let { IdProducto } = useParams();
@@ -11,10 +14,8 @@ export const MostrarProductoDetalle=()=>{
         setProductoEncontrado(Item)
     },[Item])
         return(
-            productoEncontrado?
-            <div>
-                <img src={productoEncontrado.foto}/>
-            </div>
+            productoEncontrado
+            ?<ProductoDetalle producto={productoEncontrado}/>
             :<p>Loading</p>
     )
 }

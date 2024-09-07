@@ -1,0 +1,86 @@
+.container-detalle{
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .categories-detalle{
+        width:20%;
+    }
+    .box-detalle{
+        width:60%;
+        background-color: green;
+        display: flex;
+        flex-direction: column;
+        .box-top{
+            display: flex;
+            .box-img{
+                width:50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--blanco);
+                img{
+                height:300px;
+                }
+            };
+            .box-brand{
+                background-color: var(--marron);
+                width:50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                .brand-status{
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    p{
+                        padding: 4px 12px;
+                        color:var(--amarillo)
+                    }
+                }
+                .brand-brand{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    h2{
+                        font-size: 4em;
+                        margin:0;
+                    }
+                    h3{
+                        font-size: 2em;
+                        margin:0;
+                    }
+                }
+                .price-box{
+                    width:50%;
+                    margin:24px 12px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    text-align: center;
+                    .price-false{
+                        text-decoration: line-through;
+                        color: var(--gris);
+                        font-size: 1.5em;
+                        margin:0;
+                    }
+                    .price-true{
+                        font-size: 2.5em;
+                        margin:0;
+                        color: var(--verde);
+                    }
+                }
+            };
+        }
+        .box-description{
+            background-color: orange;
+        }
+    }
+    .payment-detalle{
+        width:20%;
+    }
+}

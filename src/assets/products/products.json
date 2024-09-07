@@ -11,7 +11,8 @@
         },
         "stock":1,
         "categoria":"perfume",
-        "id":1
+        "id":1,
+        "status":"Usado"
     },
     {
         "marca":"Sin Descuento",
@@ -25,7 +26,8 @@
         },
         "stock":2,
         "categoria":"perfume",
-        "id":2
+        "id":2,
+        "status":"Nuevo"
     },
     {
         "marca":"Con Descuento",
@@ -39,7 +41,8 @@
         },
         "stock":0,
         "categoria":"perfume",
-        "id":3
+        "id":3,
+        "status":"Usado"
     },
     {
         "marca":"Con Descuento",
@@ -53,7 +56,8 @@
         },
         "stock":5,
         "categoria":"perfume",
-        "id":4
+        "id":4,
+        "status":"Nuevo"
     },
     {
         "marca":"Con Descuento",
@@ -67,7 +71,8 @@
         },
         "stock":0,
         "categoria":"perfume",
-        "id":5
+        "id":5,
+        "status":"Usado"
     },
     {
         "marca":"Sin Descuento",
@@ -81,7 +86,8 @@
         },
         "stock":4,
         "categoria":"perfume",
-        "id":6
+        "id":6,
+        "status":"Nuevo"
     },
     {
         "marca":"Sin Descuento",
@@ -95,7 +101,8 @@
         },
         "stock":8,
         "categoria":"perfume",
-        "id":7
+        "id":7,
+        "status":"Nuevo"
     },
     {
         "marca":"Con Descuento",
@@ -109,6 +116,7 @@
         },
         "stock":0,
         "categoria":"perfume",
-        "id":8
+        "id":8,
+        "status":"Usado"
     }
 ]
