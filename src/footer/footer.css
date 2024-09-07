@@ -26,7 +26,7 @@
     filter:grayscale(1) drop-shadow(0 0 .25em var(--marron));
 }
 .navbarFooter{
-    width:85%;
+    width:50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +42,23 @@
     font-size: .9em;
     letter-spacing: .5px;
     color: var(--blanco);
+}
+.infoFooter{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.infoFooter ul{
+    display: flex;
+    flex-direction: column;
+}
+.infoFooter ul li{
+    list-style: none;
+    font-weight: 600;
+    color: var(--blanco);
+    letter-spacing: 1.25px;
+    line-height: 1.5em;
 }
 .redesFooter{
     padding: 12px 48px;

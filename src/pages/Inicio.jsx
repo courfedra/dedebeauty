@@ -1,5 +1,19 @@
 export const Inicio = () => {
   return (
-    <h1 style={{height:'100vh'}}> Inicio </h1>
+    <div className="container-home">
+      <div class="banner-home">
+    banner
+      </div>
+      <div className="offer-home">
+ofertas
+      </div>
+      <div className="categories-home">
+categorias
+      </div>
+      <div className="info-home">
+info de envio cobro medio pago etc
+      </div>
+
+    </div>
   )
 }

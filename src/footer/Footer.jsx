@@ -25,6 +25,13 @@ export const Footer =()=>{
                         })}
                     </ul>
                 </div>
+                <div className="infoFooter">
+                    <ul>
+                        <li>Calle Falsa 123</li>
+                        <li>Lunes a Sábado</li>
+                        <li>9:00hs a 12:30hs / 16:30hs a 21:00hs</li>
+                    </ul>
+                </div>
                 <div className="redesFooter">
                     <i className="fa-brands fa-whatsapp">
                         <p>+54 9 263 1234567</p>
