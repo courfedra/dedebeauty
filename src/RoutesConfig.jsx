@@ -3,6 +3,7 @@ import {Contacto} from "./pages/Contacto"
 import {Nosotros} from "./pages/Nosotros"
 import {Productos} from "./pages/Productos"
 import {Blog} from "./pages/Blog"
+import { MostrarProductoDetalle } from "./components/productos/mostrarProductoDetalle"
 export const NavbarMenu = [
     {
         path: "/",
@@ -28,5 +29,9 @@ export const NavbarMenu = [
         path: "/blog",
         element: <Blog/>,
         name: "Blog",
+    },
+    {
+        path:"/:IdProducto",
+        element:<MostrarProductoDetalle/>
     },
 ]

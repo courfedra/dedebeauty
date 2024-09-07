@@ -1,5 +1,6 @@
-import "./mostrarProductos.css"
-export const MostrarProductoCompleto = ({producto}) => {
+import "./mostrarProductoLista.css"
+import { Link } from "react-router-dom";
+export const MostrarProductoLista = ({producto}) => {
     function porcentaje (precioOriginal,descuento){
         let auxiliar = precioOriginal-((descuento*precioOriginal)/100);
         return auxiliar
@@ -29,7 +30,9 @@ export const MostrarProductoCompleto = ({producto}) => {
                     </div>}
                     {producto.stock>0
                 ?<div className="card-buy-true">
-                    <button>Ver detalle</button>
+                    <Link to={`/${producto.id}`}>
+                        <button>Ver detalle</button>
+                    </Link>
                 </div>
                 :<div className="card-buy-false"><p>No disponible</p></div>}
                 </div>

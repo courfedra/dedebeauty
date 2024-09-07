@@ -1,7 +1,7 @@
 import productos from "../assets/products/products.json"
 import bannerMadre from "../assets/dedeBeautyBannerOfertaMadre.jpg"
 import "./productos.css"
-import { MostrarProductoCompleto } from "../components/productos/MostrarProductoCompleto";
+import { MostrarProductoLista } from "../components/productos/MostrarProductoLista";
 
 export const Productos = () => {
     return(
@@ -22,7 +22,7 @@ export const Productos = () => {
                 </div>
                 <div className="productos">
                     {productos.map((e)=>{
-                        return(<MostrarProductoCompleto producto={e} />)
+                        return(<MostrarProductoLista producto={e} />)
                     })
                     }
                 </div>

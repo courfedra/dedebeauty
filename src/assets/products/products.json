@@ -10,7 +10,8 @@
             "totalDescuento":10
         },
         "stock":1,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":1
     },
     {
         "marca":"Sin Descuento",
@@ -23,7 +24,8 @@
             "totalDescuento":0
         },
         "stock":2,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":2
     },
     {
         "marca":"Con Descuento",
@@ -36,7 +38,8 @@
             "totalDescuento":23
         },
         "stock":0,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":3
     },
     {
         "marca":"Con Descuento",
@@ -49,7 +52,8 @@
             "totalDescuento":90
         },
         "stock":5,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":4
     },
     {
         "marca":"Con Descuento",
@@ -62,7 +66,8 @@
             "totalDescuento":5
         },
         "stock":0,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":5
     },
     {
         "marca":"Sin Descuento",
@@ -75,7 +80,8 @@
             "totalDescuento":25
         },
         "stock":4,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":6
     },
     {
         "marca":"Sin Descuento",
@@ -88,7 +94,8 @@
             "totalDescuento":40
         },
         "stock":8,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":7
     },
     {
         "marca":"Con Descuento",
@@ -101,6 +108,7 @@
             "totalDescuento":15
         },
         "stock":0,
-        "categoria":"perfume"
+        "categoria":"perfume",
+        "id":8
     }
 ]
