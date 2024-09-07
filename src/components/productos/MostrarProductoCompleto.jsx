@@ -13,16 +13,9 @@ export const MostrarProductoCompleto = ({producto}) => {
                     </div>
                 </div>
                 <div className="card-top_brand-name">
-                    <h2>{producto.marca}</h2>
+                    <h3>{producto.marca}</h3>
                     <h3>{producto.nombre}</h3>
-                </div>
-            </div>
-            <div className="card-description">
-                <p className="description">{producto.descripcion}</p>
-                <a href="#" className="category">{producto.categoria}</a>
-            </div>
-            <div className="card-price">
-                {producto.descuento.hayDescuento
+                    {producto.descuento.hayDescuento
                     ?<div className="card-price-precio">
                         <p className="precio-tachado">
                             ${producto.precio}
@@ -34,13 +27,13 @@ export const MostrarProductoCompleto = ({producto}) => {
                     :<div className="card-price-precio">
                         <p className="precio-descuento">${producto.precio}</p>
                     </div>}
-            </div>
-            {producto.stock>0
+                    {producto.stock>0
                 ?<div className="card-buy-true">
-                    <p>{producto.stock} Disponible</p>
-                    <button>Comprar</button>
+                    <button>Ver detalle</button>
                 </div>
                 :<div className="card-buy-false"><p>No disponible</p></div>}
+                </div>
+            </div>
         </div>
     )
 }
