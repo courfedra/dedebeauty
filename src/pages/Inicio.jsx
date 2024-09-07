@@ -1,8 +1,11 @@
+import "./inicio.css"
+import bannerNombre from "../assets/dedeBeautyBannerNombreLogo.jpg"
+import bannerMadre from "../assets/dedeBeautyBannerOfertaMadre.jpg"
 export const Inicio = () => {
   return (
     <div className="container-home">
       <div class="banner-home">
-    banner
+        <img src={bannerNombre} alt="Banner Nombre"/>
       </div>
       <div className="offer-home">
 ofertas

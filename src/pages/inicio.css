@@ -1,0 +1,21 @@
+.container-home{
+    background-color:red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-home .banner-home{
+    background-color: #fff;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-home .offer-home{
+    background-color: violet;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
