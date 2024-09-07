@@ -5,13 +5,23 @@ export const ProductoDetalle=({producto})=>{
         let auxiliar = precioOriginal-((descuento*precioOriginal)/100);
         return auxiliar
     }
+    function cantStockWord(stock){
+        if (stock==0){
+            return(<h4>No hay stock</h4>)
+        }else{
+            if (stock==1){
+                return(<h4>hay {stock} unidad disponible</h4>)
+            }else{
+                return(<h4>hay {stock} unidades disponibles</h4>)
+            }
+        }
+    }
     return(
         <>
-        <div>
+        <div className="btn-back">
             <Link to="/productos">Volver Atrás</Link>
         </div>
         <div className="container-detalle">
-            <div className="categories-detalle">filtros</div>
             <div className="box-detalle">
                 <div className="box-top">
                     <div className="box-img">
@@ -42,10 +52,21 @@ export const ProductoDetalle=({producto})=>{
                             </>
                             }
                         </div>
+                        <div className="btn-buy">
+                            <div className="cant-stock-word">
+                                {cantStockWord(producto.stock)}
+                            </div>
+                        {producto.stock>0
+                        ?<button>Comprar</button>
+                        :<button>Encargar</button>
+                        }
+                        </div>
                     </div>
                 </div>
                 <div className="box-description">
-                    <p>{producto.descripcion}</p>
+                    <div className="box-text">
+                        <p>{producto.descripcion}</p>
+                    </div>
                 </div>
             </div>
             <div className="payment-detalle">medios y modos de pagos + carrito</div>

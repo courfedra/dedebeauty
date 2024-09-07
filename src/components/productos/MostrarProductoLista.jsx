@@ -28,13 +28,11 @@ export const MostrarProductoLista = ({producto}) => {
                     :<div className="card-price-precio">
                         <p className="precio-descuento">${producto.precio}</p>
                     </div>}
-                    {producto.stock>0
-                ?<div className="card-buy-true">
-                    <Link to={`/${producto.id}`}>
-                        <button>Ver detalle</button>
-                    </Link>
-                </div>
-                :<div className="card-buy-false"><p>No disponible</p></div>}
+                    <div className="card-buy-true">
+                        <Link to={`/${producto.id}`}>
+                            <button>Ver detalle</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
