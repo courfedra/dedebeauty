@@ -16,19 +16,11 @@
         display: flex;
         justify-content:center;
         background-color:var(--verdeAmarillento);
-        ul{
-            width: 100%;
-            list-style: none;
-            display: flex;
-            justify-content: space-evenly;
-            li{
-                padding:0 4px;
-                a:hover{color:var(--marron)}
-            };
-        };
     };
     .categories-products{
         display: flex;
+        width:100%;
+        flex-direction: row;
         margin:12px 8px;
     };
 }

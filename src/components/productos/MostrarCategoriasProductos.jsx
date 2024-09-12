@@ -1,7 +1,7 @@
 import productos from "../../assets/products/products.json"
 import { useParams } from "react-router-dom"
 import {MostrarProductoLista} from "./MostrarProductoLista"
-import { ShowCategories } from "../functions/showCategories"
+import { ShowBoxCategories } from "../functions/ShowBoxCategories"
 import "./mostrarCategoriasProductos.css"
 import BannerCategories from "../../assets/BeFreedomDedeBeauty.jpg"
 
@@ -15,7 +15,7 @@ export const MostrarCategoriasProducto=()=>{
             </div>
             <div className="categories-categories">
                 <div className="categories-products">
-                    <ShowCategories prod={productos}/>
+                    <ShowBoxCategories prod={productos}/>
                 </div>
             </div>
             <div className="categories-products">
