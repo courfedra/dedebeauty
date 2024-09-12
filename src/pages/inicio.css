@@ -1,21 +1,80 @@
 .container-home{
-    background-color:red;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.container-home .banner-home{
-    background-color: #fff;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container-home .offer-home{
-    background-color: violet;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .banner-home{
+        background-color: #ffff;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .presentation-home{
+        width:50%;
+        min-height: 35vh;
+        padding: 48px 0;
+        font-size: 1.75em;
+
+    }
+    .offer-home{
+        width:100%;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding:48px 0;
+        .offer-banner{
+            background-color: var(--blanco);
+            margin: 12px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background:linear-gradient(to right, #f5f5f5 50%,#000012 50%);
+        }
+        .offer-products{
+            width: 80%;
+            padding:48px 0;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+        }
+    }
+    .categories-home{
+        width:100%;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 28px 0;
+        background-color:var(--verdeAmarillento);
+        .categories-img{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color:var(--verdeAmarillento);
+        }
+        .categories-list{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 12px 0;
+            ul{
+                list-style: none;
+                width: 80%;
+                justify-content: space-around;
+                a:hover{
+                    color:var(--marron);
+                }
+            }
+        }
+    }
+    .info-home{
+        font-size: 1.5em;
+        padding:48px 0;
+    }
 }

@@ -11,7 +11,9 @@ export const Productos = () => {
                 <img src={bannerMadre} alt="bannerMadre"/>
             </div>
             <div className="categories-products-section">
-                <ShowCategories prod={productos}/>
+                <div className="categories-products">
+                    <ShowCategories prod={productos}/>
+                </div>
                 <div className="productos">
                     {productos.map((e)=>{
                         return(<MostrarProductoLista key={productos.indexOf(e)} producto={e} />)

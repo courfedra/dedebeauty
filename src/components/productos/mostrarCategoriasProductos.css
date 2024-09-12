@@ -15,7 +15,7 @@
         width: 100%;
         display: flex;
         justify-content:center;
-        background-color: var(--marron);
+        background-color:var(--verdeAmarillento);
         ul{
             width: 100%;
             list-style: none;
@@ -23,7 +23,7 @@
             justify-content: space-evenly;
             li{
                 padding:0 4px;
-                a:hover{color:var(--amarillo)}
+                a:hover{color:var(--marron)}
             };
         };
     };

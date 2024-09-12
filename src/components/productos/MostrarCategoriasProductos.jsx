@@ -14,7 +14,9 @@ export const MostrarCategoriasProducto=()=>{
                 <img src={BannerCategories} alt="banner categories"/>
             </div>
             <div className="categories-categories">
-                <ShowCategories prod={productos}/>
+                <div className="categories-products">
+                    <ShowCategories prod={productos}/>
+                </div>
             </div>
             <div className="categories-products">
             {prods.map((e)=>{

@@ -6,3 +6,8 @@ export function CategoriesList(prod){
     return list;
 }
 
+export function OfferList(prod){
+    let list=prod.filter((e)=>e.descuento.hayDescuento==true);
+    return list;
+
+}
