@@ -1,10 +1,8 @@
 import "./mostrarProductoLista.css"
 import { Link } from "react-router-dom";
+import { porcentaje } from "../functions/Functions";
 export const MostrarProductoLista = ({producto}) => {
-    function porcentaje (precioOriginal,descuento){
-        let auxiliar = precioOriginal-((descuento*precioOriginal)/100);
-        return auxiliar
-    }
+
     return(
         <div className="card">
             <div className="card-top">

@@ -5,6 +5,7 @@ import bannerOffer from "../assets/blackFridayDedeBeauty.png"
 import productos from "../assets/products/products.json"
 import { ShowCategories } from "../components/functions/showCategories"
 import { ShowOfferProductos } from "../components/functions/ShowOfferProducts"
+import { ShowBoxCategories } from "../components/functions/ShowBoxCategories"
 
 export const Inicio = () => {
   return (
@@ -28,7 +29,7 @@ export const Inicio = () => {
           <img src={bannerCategorias} alt="Banner Categorias"/>
         </div>
         <div className="categories-list">
-          <ShowCategories prod={productos}/>
+          <ShowBoxCategories/>
         </div>
       </div>
       <div className="info-home">

@@ -3,8 +3,14 @@ import bannerMadre from "../assets/dedeBeautyBannerOfertaMadre.jpg"
 import "./productos.css"
 import { MostrarProductoLista } from "../components/productos/MostrarProductoLista";
 import { ShowCategories } from "../components/functions/showCategories";
+import { useState, useEffect, useContext } from "react";
+import { ContextVariables } from "../components/ContextVariables";
 
 export const Productos = () => {
+    const {listCategories, actualizarListCategories,reiniciarListCategories}=useContext(ContextVariables);
+    useEffect(()=>{
+        reiniciarListCategories();
+    },[])
     return(
         <section className="section-productos">
             <div className="banner-products">
@@ -15,8 +21,8 @@ export const Productos = () => {
                     <ShowCategories prod={productos}/>
                 </div>
                 <div className="productos">
-                    {productos.map((e)=>{
-                        return(<MostrarProductoLista key={productos.indexOf(e)} producto={e} />)
+                    {listCategories.map((e)=>{
+                        return(<MostrarProductoLista key={listCategories.indexOf(e)} producto={e} />)
                     })
                     }
                 </div>

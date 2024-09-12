@@ -1,10 +1,7 @@
 import "./productoDetalle.css"
 import { Link } from "react-router-dom";
+import { porcentaje } from "../functions/Functions";
 export const ProductoDetalle=({producto})=>{
-    function porcentaje (precioOriginal,descuento){
-        let auxiliar = precioOriginal-((descuento*precioOriginal)/100);
-        return auxiliar
-    }
     function cantStockWord(stock){
         if (stock==0){
             return(<h4>No hay stock</h4>)

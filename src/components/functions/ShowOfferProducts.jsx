@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { OfferList } from "./Functions"
 import { MostrarProductoLista } from "../productos/MostrarProductoLista";
 export const ShowOfferProductos=({prod})=>{

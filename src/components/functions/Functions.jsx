@@ -11,3 +11,8 @@ export function OfferList(prod){
     return list;
 
 }
+
+export function porcentaje (precioOriginal,descuento){
+    let auxiliar = precioOriginal-((descuento*precioOriginal)/100);
+    return auxiliar
+}
