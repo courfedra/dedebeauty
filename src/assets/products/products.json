@@ -10,9 +10,9 @@
             "totalDescuento":10
         },
         "stock":1,
-        "categoria":"perfume",
         "id":1,
-        "status":"Usado"
+        "status":"Usado",
+        "categorie":"Perfumes"
     },
     {
         "marca":"Sin Descuento",
@@ -25,9 +25,9 @@
             "totalDescuento":0
         },
         "stock":2,
-        "categoria":"perfume",
         "id":2,
-        "status":"Nuevo"
+        "status":"Nuevo",
+        "categorie":"Bronzers"
     },
     {
         "marca":"Con Descuento",
@@ -40,9 +40,9 @@
             "totalDescuento":23
         },
         "stock":0,
-        "categoria":"perfume",
         "id":3,
-        "status":"Usado"
+        "status":"Usado",
+        "categorie":"Labiales"
     },
     {
         "marca":"Con Descuento",
@@ -55,9 +55,9 @@
             "totalDescuento":90
         },
         "stock":5,
-        "categoria":"perfume",
         "id":4,
-        "status":"Nuevo"
+        "status":"Nuevo",
+        "categorie":"Perfumes"
     },
     {
         "marca":"Con Descuento",
@@ -70,9 +70,9 @@
             "totalDescuento":5
         },
         "stock":0,
-        "categoria":"perfume",
         "id":5,
-        "status":"Usado"
+        "status":"Usado",
+        "categorie":"Bases"
     },
     {
         "marca":"Sin Descuento",
@@ -85,9 +85,9 @@
             "totalDescuento":25
         },
         "stock":4,
-        "categoria":"perfume",
         "id":6,
-        "status":"Nuevo"
+        "status":"Nuevo",
+        "categorie":"Bases"
     },
     {
         "marca":"Sin Descuento",
@@ -100,9 +100,9 @@
             "totalDescuento":40
         },
         "stock":8,
-        "categoria":"perfume",
         "id":7,
-        "status":"Nuevo"
+        "status":"Nuevo",
+        "categorie":"Serum"
     },
     {
         "marca":"Con Descuento",
@@ -115,8 +115,8 @@
             "totalDescuento":15
         },
         "stock":0,
-        "categoria":"perfume",
         "id":8,
-        "status":"Usado"
+        "status":"Usado",
+        "categorie":"Mascaras"
     }
 ]

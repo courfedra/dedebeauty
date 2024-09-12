@@ -38,7 +38,7 @@
     margin:12px 0;
     font-size: larger;
 }
-.section-productos .categories-products-section .categories-products ul li:hover{
+.section-productos .categories-products-section .categories-products ul li a:hover{
     color:var(--amarillo)
 }
 .productos{
