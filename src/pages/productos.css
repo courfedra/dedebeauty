@@ -4,49 +4,50 @@
     width:100%;
     justify-content: center;
     align-items: center;
-}
-.section-productos .banner-products{
-    background-color: #ffffff;
-    width: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: 12px 0;
-}
-.section-productos .categories-products-section{
-    width:100%;
-    display:flex;
-    padding: 12px 0;
-    background-color: var(--blanco);
-}
-.section-productos .categories-products-section .categories-products{
-    width:15%;
-    background-color:var(--verdeAmarillento);
-    border-radius: 0 8px 12px 0;
-}
-.section-productos .categories-products-section .categories-products ul{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin:0;
-    padding: 8px 0;
-}
-.section-productos .categories-products-section .categories-products ul li{
-    list-style: none;
-    cursor: pointer;
-    color:var(--negro);
-    margin:12px 0;
-    font-size: larger;
-}
-.section-productos .categories-products-section .categories-products ul li a:hover{
-    color:var(--marron)
-}
-.productos{
-    width:100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(200px, auto);
-    grid-auto-flow: row dense;
-    place-items: center;
+    .banner-products{
+        background-color: #ffffff;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin: 12px 0;
+    }
+    .categories-products-section{
+        width:100%;
+        display:flex;
+        padding: 12px 0;
+        background-color: var(--blanco);
+        .categories-products{
+            width:15%;
+            background-color:var(--verdeAmarillento);
+            box-shadow: 4px 4px 4px 1px var(--amarillo);
+            border-radius: 0 8px 12px 0;
+            ul{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin:0;
+                padding: 8px 0;
+                li{
+                    list-style: none;
+                    cursor: pointer;
+                    color:var(--negro);
+                    margin:12px 0;
+                    font-size: larger;
+                    a:hover{
+                        color:var(--marron)
+                    }
+                }
+            }
+        }
+        .productos{
+            width:100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(200px, auto);
+            grid-auto-flow: row dense;
+            place-items: center;
+        }
+    }
 }

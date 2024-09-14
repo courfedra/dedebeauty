@@ -27,11 +27,6 @@ export const NavbarMenu = [
         name: "Productos",
     },
     {
-        path: "/blog",
-        element: <Blog/>,
-        name: "Blog",
-    },
-    {
         path:"/:IdProducto",
         element:<MostrarProductoDetalle/>
     },
