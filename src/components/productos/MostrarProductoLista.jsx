@@ -27,7 +27,7 @@ export const MostrarProductoLista = ({producto}) => {
                         <p className="precio-descuento">${producto.precio}</p>
                     </div>}
                     <div className="card-buy-true">
-                        <Link to={`/${producto.id}`}>
+                        <Link to={`/producto/${producto.id}`}>
                             <button>Ver detalle</button>
                         </Link>
                     </div>

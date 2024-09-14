@@ -6,7 +6,6 @@ import { CategoriesList } from "./Functions";
 export const ShowBoxCategories=()=>{
     const{listCategories}=useContext(ContextVariables);
     let box=CategoriesList(listCategories)
-    console.log(box)
     return(
         <div className="categories-boxes">
             {box.map((e)=>{

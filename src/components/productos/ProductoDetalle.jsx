@@ -1,18 +1,8 @@
 import "./productoDetalle.css"
 import { Link } from "react-router-dom";
 import { porcentaje } from "../functions/Functions";
+import { cantStockWord } from "../functions/Functions";
 export const ProductoDetalle=({producto})=>{
-    function cantStockWord(stock){
-        if (stock==0){
-            return(<h4>No hay stock</h4>)
-        }else{
-            if (stock==1){
-                return(<h4>hay {stock} unidad disponible</h4>)
-            }else{
-                return(<h4>hay {stock} unidades disponibles</h4>)
-            }
-        }
-    }
     return(
         <>
         <div className="btn-back">

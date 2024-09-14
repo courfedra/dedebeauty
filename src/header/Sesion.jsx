@@ -23,7 +23,7 @@ const Profile=()=>{
         <div className="profile-sesion">
             <p>¡Bienvenido! <span>{user.name}</span></p>
             <div>
-                <Link to="/">Perfil</Link>
+                <Link to={`/perfil/${user.nickname}`}>Perfil</Link>
                 <LogoutButton/>
             </div>
         </div>

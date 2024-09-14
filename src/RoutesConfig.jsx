@@ -5,6 +5,7 @@ import {Productos} from "./pages/Productos"
 import {Blog} from "./pages/Blog"
 import { MostrarProductoDetalle } from "./components/productos/mostrarProductoDetalle"
 import { MostrarCategoriasProducto } from "./components/productos/MostrarCategoriasProductos"
+import { Dashboard } from "./components/sesion/Dashboard"
 export const NavbarMenu = [
     {
         path: "/",
@@ -27,11 +28,15 @@ export const NavbarMenu = [
         name: "Productos",
     },
     {
-        path:"/:IdProducto",
+        path:"/producto/:IdProducto",
         element:<MostrarProductoDetalle/>
     },
     {
         path:"/categoria/:IdCategoria",
         element:<MostrarCategoriasProducto/>
+    },
+    {
+        path:"/perfil/:IdPerfil",
+        element:<Dashboard/>
     },
 ]

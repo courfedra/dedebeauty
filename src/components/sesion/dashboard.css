@@ -1,0 +1,30 @@
+.profile-container{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    gap:20px;
+    .profile-menu{
+        background-color: green;
+        width: 15%;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        ul{
+            margin: 0;
+            padding: 12px 0;
+            background-color: beige;
+            list-style:none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li{
+                padding: 4px 0;
+                font-size: 1.5em;
+            }
+        }
+    }
+    .profile-show{
+        background-color: yellow;
+        width: 85%;
+    }
+}
