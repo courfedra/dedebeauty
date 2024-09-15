@@ -24,7 +24,9 @@
         }
     }
     .profile-show{
-        background-color: yellow;
         width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: start;
     }
 }
