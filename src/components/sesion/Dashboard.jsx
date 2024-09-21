@@ -3,25 +3,30 @@ import { useState, useEffect, useContext } from "react";
 import { ContextVariables } from "../ContextVariables";
 import { MostrarProductoLista } from "../productos/MostrarProductoLista";
 import "./dashboard.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { CreateProduct } from "./CRUD/createProduct";
 export const Dashboard=()=>{
     const [productoPerfil,setProductoPerfil] = useState([])
+    const [option,setOption] = useState('')
     const {user,isAuthenticated,isLoading} = useAuth0()
     const {listCategories, actualizarListCategories,reiniciarListCategories}=useContext(ContextVariables);
 
     const IdPerfil=useParams()
     const CargarData=()=>{
         return(
-            productoPerfil.map((e)=>{
+            option==''
+            ?productoPerfil.map((e)=>{
                 return(<MostrarProductoLista producto={e}/>)
             })
+            :<h1>Hola</h1>
         )
     }
     let prods = listCategories.filter((e)=>e.vendedor==user.nickname)
     useEffect(()=>{
         setProductoPerfil(prods)
         CargarData()
-    },[])
+        console.log("entre useEffect")
+    },[option])
 
     return(
         !isAuthenticated
@@ -29,10 +34,10 @@ export const Dashboard=()=>{
             :<div className="profile-container">
                 <div className="profile-menu">
                     <ul>
-                        <li>Ver Productos</li>
-                        <li>Agregar Producto</li>
-                        <li>Quitar producto</li>
-                        <li>Modificar producto</li>
+                        <li onClick={()=>{setOption('')}}>Ver Productos</li>
+                        <li onClick={()=>{setOption('agregar')}}>Agregar Producto</li>
+                        <li onClick={()=>{setOption('quitar')}}>Quitar producto</li>
+                        <li onClick={()=>{setOption('modificar')}}>Modificar producto</li>
                     </ul>
                 </div>
                 <div className="profile-show">
