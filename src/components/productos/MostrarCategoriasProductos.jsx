@@ -19,9 +19,11 @@ export const MostrarCategoriasProducto=()=>{
                 </div>
             </div>
             <div className="categories-products">
-            {prods.map((e)=>{
-                return(<MostrarProductoLista producto={e}/>)
-            })}
+                <div className="categories-products-cards">
+                    {prods.map((e)=>{
+                        return(<MostrarProductoLista producto={e}/>)
+                    })}
+                </div>
             </div>
         </div>
     )

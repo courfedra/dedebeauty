@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { NavbarMenu } from "../RoutesConfig";
 import "./navbar.css";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { ContextVariables } from "../components/ContextVariables";
 
 export const Navbar=()=> {

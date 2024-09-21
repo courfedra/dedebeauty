@@ -30,13 +30,15 @@ export const Dashboard=()=>{
                 <div className="profile-menu">
                     <ul>
                         <li>Ver Productos</li>
-                        <li>Ventas</li>
-                        <li>Compras</li>
-                        <li>Ajustes</li>
+                        <li>Agregar Producto</li>
+                        <li>Quitar producto</li>
+                        <li>Modificar producto</li>
                     </ul>
                 </div>
                 <div className="profile-show">
-                    {CargarData()}
+                    <div className="profile-show-cards">
+                        {CargarData()}
+                    </div>
                 </div>
             </div>
 

@@ -5,12 +5,12 @@
     justify-content: center;
     align-items: center;
     .banner-products{
-        background-color: #ffffff;
+        background-color: var(--blanco);
         width: 100%;
         display:flex;
         justify-content: center;
         align-items: center;
-        margin: 12px 0;
+        padding: 12px 0;
     }
     .categories-products-section{
         width:100%;
@@ -19,8 +19,8 @@
         background-color: var(--blanco);
         .categories-products{
             width:15%;
-            background-color:var(--verdeAmarillento);
-            box-shadow: 4px 4px 4px 1px var(--amarillo);
+            background-color:var(--rosa);
+            box-shadow: 2.5px 2.5px 10px 0px var(--negro);
             border-radius: 0 8px 12px 0;
             ul{
                 display: flex;
@@ -34,8 +34,9 @@
                     color:var(--negro);
                     margin:12px 0;
                     font-size: larger;
-                    a:hover{
-                        color:var(--marron)
+                    transition: all .25s ease-in-out;
+                    &:hover{
+                        transform: translateX(10px);
                     }
                 }
             }

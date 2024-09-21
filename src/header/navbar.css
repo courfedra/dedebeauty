@@ -20,5 +20,5 @@ a{
 }
 
 a:hover{
-    color: var(--marron);
+    text-decoration: underline double;
 }

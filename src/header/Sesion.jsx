@@ -3,6 +3,8 @@ import { Register } from "../components/sesion/Register"
 import { useAuth0 } from "@auth0/auth0-react";
 import "./sesion.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ContextVariables } from "../components/ContextVariables";
 
 const LogoutButton=()=>{
     const {logout} = useAuth0()
@@ -13,6 +15,7 @@ const LogoutButton=()=>{
 
 const Profile=()=>{
     const {user, isAuthenticated,isLoading} = useAuth0()
+    const {reiniciarListCategories}=useContext(ContextVariables);
     if (isLoading){
         return(
             <div>Cargando...</div>
@@ -21,9 +24,9 @@ const Profile=()=>{
     return(
         isAuthenticated &&
         <div className="profile-sesion">
-            <p>¡Bienvenido! <span>{user.name}</span></p>
+            <p className="profile-sesion-user">¡Bienvenido! <span>{user.name}</span></p>
             <div>
-                <Link to={`/perfil/${user.nickname}`}>Perfil</Link>
+                <Link onClick={()=>{reiniciarListCategories()}} to={`/perfil/${user.nickname}`}>Perfil</Link>
                 <LogoutButton/>
             </div>
         </div>

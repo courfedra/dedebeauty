@@ -4,22 +4,26 @@
     justify-content: end;
     align-items: center;
     margin: 0 12px;
-}
-.anchor-sesion{
-    padding: 0 .5em;
-}
-.anchor-sesion a:hover{
-    color: var(--naranja);
+    .anchor-sesion{
+        padding: 0 .5em;
+        &:hover{
+            color: var(--eosa);
+        }
+    }
 }
 .profile-sesion{
+    width: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.profile-sesion p{
-    font-size: 1.25em;
-}
-.profile-sesion p span{
-    color: var(--marron);
+    padding-bottom:8px;
+    .profile-sesion-user{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.25em;
+        span{
+            color: var(--negro);
+        }
+    }
 }

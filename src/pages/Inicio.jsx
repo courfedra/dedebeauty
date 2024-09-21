@@ -1,5 +1,5 @@
 import "./inicio.css"
-import bannerNombre from "../assets/dedeBeautyBannerNombreLogo.jpg"
+import bannerHero from "../assets/dedeBeautyBannerHero.jpg"
 import bannerCategorias from "../assets/categoriasBanner.jpg"
 import bannerOffer from "../assets/blackFridayDedeBeauty.png"
 import productos from "../assets/products/products.json"
@@ -10,8 +10,8 @@ import { ShowBoxCategories } from "../components/functions/ShowBoxCategories"
 export const Inicio = () => {
   return (
     <div className="container-home">
-      <div class="banner-home">
-        <img src={bannerNombre} alt="Banner Nombre"/>
+      <div className="banner-home">
+        <img src={bannerHero} alt="Banner Hero"/>
       </div>
       <div className="presentation-home">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus. Donec augue elit, rhoncus ac sodales id, porttitor vitae est. Donec laoreet rutrum libero sed pharetra. Donec vel egestas dolor, nec dignissim metus. Donec augue elit, rhoncus ac sodales id, porttitor vitae est. Donec laoreet rutrum libero sed pharetra. Duis a arcu convallis, gravida purus eget, mollis diam.</p>

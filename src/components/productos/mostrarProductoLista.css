@@ -7,10 +7,11 @@
     align-items: center;
     padding: 8px 12px;
     width:400px;
+    max-width:600px;
     height: 200px;
     flex-grow: 1;
-    background-color: var(--rosa);
-    box-shadow: 4px 4px 8px .5px var(--gris);
+    background-color: var(--blanco);
+    box-shadow: 2.5px 2.5px 10px 0px var(--negro);
     .card-top{
         display: flex;
         width: 100%;
@@ -39,7 +40,7 @@
                     width: 100px;
                     top:0px;
                     right:-25px;
-                    background-color: var(--marron);
+                    background-color: var(--verdeAmarillento);
                     transform: rotateZ(45deg);
                 }
             }
@@ -101,10 +102,12 @@
 .card-price-precio p{
     margin: 8px 4px;
 }
+/*si*/
 .card-price-precio .precio-tachado{
     text-decoration: line-through;
     color: var(--gris);
 }
+
 .card-price-precio .precio-descuento{
     font-size: 1.5em;
 }
@@ -118,16 +121,18 @@
 }
 .card-buy-true button{
     border:none;
-    background-color: var(--naranja);
-    border-radius: 16px;
+    background-color: var(--blanco);
+    box-shadow: 1px 1px 5px 0px var(--negro);
+    border-radius: 4px;
     width:100%;
-    margin:8px 0;
-    padding:4px;
+    margin:4px 0;
+    padding: 4px 6px;
     transition: all .15s ease-in-out;
     cursor: pointer;
 }
 .card-buy-true button:hover{
     background-color: var(--blanco);
+    box-shadow: 1px 1px 5px 1px var(--negro);
 }
 .card-buy-false p{
     color:red;
