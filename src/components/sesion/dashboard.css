@@ -22,19 +22,22 @@
             li{
                 padding: 8px 0;
                 font-size: 1.5em;
+                cursor: pointer;
+                transition: all .25s ease-in-out;
+                &:hover{transform: translateX(10px);}
             }
         }
     }
     .profile-show{
-        width: auto;
+        width: 100%;
         display: flex;
         justify-content: center;
         .profile-show-cards{
-            width: 90%;
-            flex-wrap: wrap;
+            width: 100%;
             display: flex;
-            align-content: start;
+            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
         }
     }
 }
