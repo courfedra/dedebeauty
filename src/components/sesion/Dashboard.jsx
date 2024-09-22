@@ -5,7 +5,7 @@ import { MostrarProductoLista } from "../productos/MostrarProductoLista";
 import "./dashboard.css";
 import { Link, useParams } from "react-router-dom";
 import { CreateProduct } from "./CRUD/createProduct";
-import { DeleteProduct } from "./CRUD/DeleteProduct";
+import { DeleteProduct } from "./CRUD/deleteProduct";
 import { ModifyProduct } from "./CRUD/ModifyProduct";
 export const Dashboard=()=>{
     const [productoPerfil,setProductoPerfil] = useState([])

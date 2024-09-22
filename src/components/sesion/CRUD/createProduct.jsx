@@ -1,5 +1,4 @@
 import "./CRUD.css"
-import Productos from "../../../assets/products/products.json"
 import { useContext, useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { CategoriesList } from "../../functions/Functions";
