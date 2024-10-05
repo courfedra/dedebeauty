@@ -7,7 +7,20 @@ export const DeleteProduct=()=>{
     const {user} = useAuth0()
     const {listCategories}=useContext(ContextVariables);
     let prods = listCategories.filter((e)=>e.vendedor==user.nickname)
-    prods.map((e)=>{
-        console.log(e.marca)
-    })
+    return(
+        <div className="delete-product">
+            {prods.map((e)=>{
+                return(
+                    <div className="product-line">
+                        <div className="product-info">
+                            <p>{e.marca}</p>
+                            <p>{e.nombre}</p>
+                            <p>{e.stock}</p>
+                        </div>
+                        <button onClick={()=>{alert("¡Eliminate!")}} className="btn-delete"><span>🞬</span></button>
+                    </div>
+                )
+            })}
+        </div>
+    )
 }

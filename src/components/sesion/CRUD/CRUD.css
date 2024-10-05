@@ -58,3 +58,38 @@
         }
     }
 }
+.delete-product{
+    width:75%;
+    .product-line{
+        display: flex;
+        margin: 8px 0;
+        padding: 8px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 12px;
+        border: 1px solid var(--rosa);
+        &:hover{
+            box-shadow: inset 0px 0px 10px 1px var(--rosa);
+        }
+        .product-info{
+            width:80%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .btn-delete{
+            background-color: var(--blanco);
+            border:2px solid var(--rosa);
+            border-radius: 12px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all .1s ease-in-out;
+            span{
+                font-size: 28px;
+            }
+            &:hover{
+                transform: rotate(15deg);
+            }
+        }
+    }
+}
