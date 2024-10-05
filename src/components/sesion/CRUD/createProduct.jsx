@@ -97,7 +97,9 @@ export const CreateProduct=()=>{
                         <input type="text" id="foto" name="foto"/>
                     </label>
                 </div>
-                <input value="Agregar" type="submit"/>
+                <button class="btn-enviar">
+                    <input value="Agregar" type="submit"/>
+                </button>
             </div>
         </form>
         <p>{newProduct.nombre}</p>

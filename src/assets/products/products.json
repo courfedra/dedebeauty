@@ -13,7 +13,7 @@
         "id":1,
         "status":"Usado",
         "categorie":"Perfumes",
-        "vendedor":"franandres93"
+        "vendedor":"Jose"
     },
     {
         "marca":"Sin Descuento",
@@ -61,7 +61,7 @@
         "id":4,
         "status":"Nuevo",
         "categorie":"Perfumes",
-        "vendedor":"franandres93"
+        "vendedor":"Jose"
     },
     {
         "marca":"Con Descuento",
@@ -125,7 +125,7 @@
         "id":8,
         "status":"Usado",
         "categorie":"Mascaras",
-        "vendedor":"franandres93"
+        "vendedor":"Jose"
     },
     {
         "marca":"L'oreal",
@@ -189,7 +189,7 @@
         "id":4,
         "status":"Nuevo",
         "categorie":"Perfumes",
-        "vendedor":"franandres93"
+        "vendedor":"Jose"
     },
     {
         "marca":"Con Descuento",
