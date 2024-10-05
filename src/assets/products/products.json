@@ -138,7 +138,7 @@
             "totalDescuento":10
         },
         "stock":1,
-        "id":1,
+        "id":9,
         "status":"Usado",
         "categorie":"Perfumes",
         "vendedor":"franandres93"
@@ -154,7 +154,7 @@
             "totalDescuento":0
         },
         "stock":2,
-        "id":2,
+        "id":10,
         "status":"Nuevo",
         "categorie":"Bronzers",
         "vendedor":"franandres93"
@@ -170,7 +170,7 @@
             "totalDescuento":23
         },
         "stock":0,
-        "id":3,
+        "id":11,
         "status":"Usado",
         "categorie":"Labiales",
         "vendedor":"anonimo"
@@ -186,7 +186,7 @@
             "totalDescuento":90
         },
         "stock":5,
-        "id":4,
+        "id":12,
         "status":"Nuevo",
         "categorie":"Perfumes",
         "vendedor":"Jose"
@@ -202,7 +202,7 @@
             "totalDescuento":5
         },
         "stock":0,
-        "id":5,
+        "id":13,
         "status":"Usado",
         "categorie":"Otros",
         "vendedor":"javier"
@@ -218,7 +218,7 @@
             "totalDescuento":25
         },
         "stock":4,
-        "id":6,
+        "id":14,
         "status":"Nuevo",
         "categorie":"Bases",
         "vendedor":"franandres93"
@@ -234,7 +234,7 @@
             "totalDescuento":40
         },
         "stock":8,
-        "id":7,
+        "id":15,
         "status":"Nuevo",
         "categorie":"Serum",
         "vendedor":"francisco"
@@ -250,7 +250,7 @@
             "totalDescuento":15
         },
         "stock":0,
-        "id":8,
+        "id":16,
         "status":"Usado",
         "categorie":"Mascaras",
         "vendedor":"franandres93"

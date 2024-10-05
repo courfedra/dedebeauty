@@ -93,3 +93,53 @@
         }
     }
 }
+.update-product{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    position:relative;
+    .product-line{
+        border-radius: 12px;
+        border: 2px solid var(--rosa);
+        width: 100%;
+        display: flex;
+        margin: 2px;
+        margin: 8px 0;
+        padding:4px;
+        &:hover{
+            box-shadow: inset 0px 0px 10px 1px var(--rosa);
+        }
+        .product-info{
+            display: flex;
+            width: 75%;
+            justify-content: space-evenly;
+            .minibox-date{
+                background-color: red;
+            }
+        }
+    }
+    .btn-update{
+        width: 25%;
+        border-radius: 12px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: 2px solid var(--rosa);
+        box-shadow: inset 0px 0px 10px 1px var(--rosa);
+        span{
+            transition: all .2s ease-in-out;
+            margin:0 4px;
+            font-size:24px
+        };
+        &:hover{
+            span{
+                transform: translateX(20px);
+            }
+        }
+    }
+
+}
