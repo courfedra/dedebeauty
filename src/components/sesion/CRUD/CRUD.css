@@ -96,15 +96,15 @@
 .update-product{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     position:relative;
+    align-items: center;
     .product-line{
         border-radius: 12px;
         border: 2px solid var(--rosa);
-        width: 100%;
+        width: 90%;
         display: flex;
-        margin: 2px;
-        margin: 8px 0;
+        margin: 4px 0;
         padding:4px;
         &:hover{
             box-shadow: inset 0px 0px 10px 1px var(--rosa);
@@ -113,9 +113,6 @@
             display: flex;
             width: 75%;
             justify-content: space-evenly;
-            .minibox-date{
-                background-color: red;
-            }
         }
     }
     .btn-update{
@@ -139,6 +136,73 @@
             span{
                 transform: translateX(20px);
             }
+        }
+    }
+    .popUpBox{
+        height: 100%;
+        width: 100%;
+        .popUpAbsolute{
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 24px;
+            .infoPopUp{
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                display: flex;
+                .popUpMiniBox{
+                    width: 50%;
+                    label{
+                        margin:5px 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width:100%;
+                        flex-wrap: wrap;
+                        input,textarea{
+                            padding: 8px 4px;
+                            margin: 2px 0;
+                            border: 2.5px solid var(--rosa);
+                            border-radius: 8px;
+                            background-color: var(--blanco);
+                            &:hover{outline: var(--naranja) solid 2.5px;}
+                            &:focus{outline: none;}
+                            width:80%;
+                            resize:none;
+                            field-sizing: content;
+                        }
+                    }
+                }
+            }
+            .btn-close-popup{
+                background-color: var(--rosa);
+                border:1px solid var(--rosa);
+                border-radius: 8px;
+                padding: 10px;
+                margin: 5px 0;
+                text-align: center;
+                cursor: pointer;
+            }
+            .btn-save-info{
+                width: 100%;
+                border:1px solid var(--rosa);
+                border-radius: 8px;
+                padding: 10px;
+                margin: 5px 0;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+        .popUpHidden{
+            display: none;
         }
     }
 

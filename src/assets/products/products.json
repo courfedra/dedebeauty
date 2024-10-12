@@ -87,7 +87,7 @@
         "precio":35000,
         "descuento":{
             "hayDescuento":false,
-            "totalDescuento":25
+            "totalDescuento":0
         },
         "stock":4,
         "id":6,
@@ -103,7 +103,7 @@
         "precio":12000,
         "descuento":{
             "hayDescuento":false,
-            "totalDescuento":40
+            "totalDescuento":0
         },
         "stock":8,
         "id":7,
@@ -215,7 +215,7 @@
         "precio":35000,
         "descuento":{
             "hayDescuento":false,
-            "totalDescuento":25
+            "totalDescuento":0
         },
         "stock":4,
         "id":14,
@@ -231,7 +231,7 @@
         "precio":12000,
         "descuento":{
             "hayDescuento":false,
-            "totalDescuento":40
+            "totalDescuento":0
         },
         "stock":8,
         "id":15,

@@ -1,5 +1,5 @@
 import "./CRUD.css"
-import { useContext, useEffect} from "react";
+import { useContext,useState, useEffect} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Render from "react-dom"
 import { ContextVariables } from "../../ContextVariables";
@@ -7,34 +7,73 @@ export const ModifyProduct=()=>{
     const {user} = useAuth0()
     const {listCategories}=useContext(ContextVariables);
     let prods = listCategories.filter((e)=>e.vendedor==user.nickname)
-    useEffect(()=>{
+    const [idPopUp,setIdPopUp]=useState(1000)
+    const [prodPopUp,setProdPopUp]=useState(prods[0])
+    const [showPopUp,setShowPopUp]=useState('popUpHidden')
 
-    },[])
+    useEffect(() => {
+        setProdPopUp(AbrirPopUp(idPopUp))
+        PopUpUpdate()
+    },[idPopUp]);
+
     const AbrirPopUp=(id)=>{
-        let productoUpdate = prods.find((e)=>e.id==id)
-        PopUpupdate(productoUpdate)
+        return prods.find((e)=>e.id==id)
     }
-    const PopUpupdate=(e)=>{
-        console.log("abierto popup con e de valor: ")
-        console.log(e)
+    const PopUpUpdate=()=>{
         return(
-            <div className="popUpAbsolute">
-                <div>
-                    <p>{e.marca}</p>
-                    <p>{e.nombre}</p>
-                    <p>{e.descripcion}</p>
-                    <p>{e.foto}</p>
-                    <p>{e.precio}</p>
-                    <p>{e.descuento.hayDescuento}</p>
-                    <p>{e.descuento.totalDescuento}</p>
-                    <p>{e.stock}</p>
-                    <p>{e.status}</p>
-                    <p>{e.categorie}</p>
-                </div>
-                <button>Modificar</button>
+            prodPopUp
+            &&<div className={showPopUp}>
+                <button className="btn-close-popup" onClick={()=>setShowPopUp('popUpHidden')}>Cerrar</button>
+                <form>
+                    <div className="infoPopUp">
+                        <div className="popUpMiniBox">
+                            <label for="marca">Marca
+                                <input type="text" placeholder={prodPopUp.marca} id ="marca" name="marca"/>
+                            </label>
+                            <label for="nombre">Nombre
+                                <input type="text" placeholder={prodPopUp.nombre} id ="nombre" name="nombre"/>
+                            </label>
+                            <label for="precio">Precio
+                                <input type="text" placeholder={prodPopUp.precio} id ="precio" name="precio"/>
+                            </label>
+                            <label for="stock">stock
+                                <input type="text" placeholder={prodPopUp.stock} id ="stock" name="stock"/>
+                            </label>
+                            <label for="status">status
+                                <input type="text" placeholder={prodPopUp.status} id ="status" name="status"/>
+                            </label>
+                            <label for="nombre">categorie
+                                <input type="text" placeholder={prodPopUp.categorie} id ="categorie" name="categorie"/>
+                            </label>
+                        </div>
+                        <div className="popUpMiniBox">
+                            <label for="descripcion">Descripcion
+                                <textarea type="text" placeholder={prodPopUp.descripcion} id ="descripcion" name="descripcion"/>
+                            </label>
+                            <label for="foto">Foto
+                                <input type="text" placeholder={prodPopUp.foto} id ="foto" name="foto"/>
+                            </label>
+                            <label for="hayDescuento">Hay Descuento
+                                <input type="text" placeholder={prodPopUp.descuento.hayDescuento?'True':'False'} id ="hayDescuento" name="hayDescuento"/>
+                            </label>
+                            <label for="totalDescuento">Total Descuento
+                                <input type="text" placeholder={prodPopUp.descuento.totalDescuento} id ="totalDescuento" name="totalDescuento"/>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <button
+                    className="btn-save-info"
+                    onClick={()=>{
+                        setShowPopUp('popUpHidden');
+                        alert('Modificado');
+                    }}>
+                    Modificar
+                </button>
             </div>
         )
     }
+
     return(
         <>
             <div className="update-product">
@@ -51,10 +90,16 @@ export const ModifyProduct=()=>{
                                 <div className="minibox-date">
                                     <p>${e.precio}</p>
                                 </div>
+                                <div className="minibox-date">
+                                    <p>ID: {e.id}</p>
+                                </div>
                             </div>
                             <button
                                 className="btn-update"
-                                onClick={()=>{AbrirPopUp(e.id)}}>
+                                onClick={()=>{
+                                    setIdPopUp(e.id);
+                                    setShowPopUp('popUpAbsolute');
+                                    }}>
                                 Modificar
                                 <span>
                                     🢂
@@ -63,6 +108,9 @@ export const ModifyProduct=()=>{
                         </div>
                     )
                 })}
+                <div className="popUpBox">
+                    {PopUpUpdate()}
+                </div>
             </div>
         </>
     )

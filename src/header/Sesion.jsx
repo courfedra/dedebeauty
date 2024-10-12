@@ -24,7 +24,10 @@ const Profile=()=>{
     return(
         isAuthenticated &&
         <div className="profile-sesion">
-            <p className="profile-sesion-user">¡Bienvenido! <span>{user.name}</span></p>
+            <div className="profile-sesion-cart-user">
+                <p className="profile-sesion-user">¡Bienvenido! <span>{user.name}</span></p>
+                <p className="profile-sesion-cart">🛒<span>0</span></p>
+            </div>
             <div>
                 <Link onClick={()=>{reiniciarListCategories()}} to={`/perfil/${user.nickname}`}>Perfil</Link>
                 <LogoutButton/>

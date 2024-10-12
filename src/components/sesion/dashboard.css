@@ -30,8 +30,10 @@
     }
     .profile-show{
         width: 100%;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
+        align-items: start;
         .profile-show-cards{
             width: 100%;
             display: flex;
