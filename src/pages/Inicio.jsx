@@ -3,7 +3,6 @@ import bannerHero from "../assets/dedeBeautyBannerHero.jpg"
 import bannerCategorias from "../assets/categoriasBanner.jpg"
 import bannerOffer from "../assets/blackFridayDedeBeauty.png"
 import productos from "../assets/products/products.json"
-import { ShowCategories } from "../components/functions/showCategories"
 import { ShowOfferProductos } from "../components/functions/ShowOfferProducts"
 import { ShowBoxCategories } from "../components/functions/ShowBoxCategories"
 
