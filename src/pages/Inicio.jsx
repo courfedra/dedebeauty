@@ -5,8 +5,24 @@ import bannerOffer from "../assets/blackFridayDedeBeauty.png"
 import productos from "../assets/products/products.json"
 import { ShowOfferProductos } from "../components/functions/ShowOfferProducts"
 import { ShowBoxCategories } from "../components/functions/ShowBoxCategories"
+import { db,analytics } from "../utils/firebaseConfig"
+import { increment,updateDoc,doc,setDoc,collection, serverTimestamp } from "firebase/firestore";
 
 export const Inicio = () => {
+  console.log(db)
+
+  const createOrderInFirestore = async ()=>{
+    const newOrderRef = doc(collection(db, "productos"));
+    return newOrderRef;
+  }
+
+  createOrderInFirestore()
+  .then(result=>{
+      //actualizar stock deproductos comrpados
+      console.log(result)
+  })
+  .catch(err=>console.log(err))
+
   return (
     <div className="container-home">
       <div className="banner-home">
