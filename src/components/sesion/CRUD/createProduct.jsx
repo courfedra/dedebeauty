@@ -3,57 +3,40 @@ import { useContext, useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { CategoriesList } from "../../functions/Functions";
 import { ContextVariables } from "../../ContextVariables";
+import { agregarProductoFirebase } from "../../../utils/firebaseConfig";
 export const CreateProduct=()=>{
     const {listCategories,agregarProducto}=useContext(ContextVariables);
     const categorias= CategoriesList(listCategories);
     const {user} = useAuth0()
-    const [cargar,setCargar]=useState(false)
-    const [newProduct,setNewProduct]=useState({
-        "marca":"",
-        "nombre":"",
-        "descripcion":"",
-        "foto":"",
-        "precio":0,
-        "descuento.hayDescuento":false,
-        "descuento.totalDescuento":0,
-        "stock":0,
-        "id":0,
-        "status":"",
-        "categorie":"",
-        "vendedor":user.nickname,
-    })
-    useEffect(()=>{
-        cargar==true&&cargarProducto()
-        setCargar(false)
-    },[cargar])
-    /*useEffect(()=>{
-        newProduct.id!=0&&agregarProducto(newProduct)
-    },[newProduct])*/
+
+    const preventDefaultSubmit=(event)=>{
+        event.preventDefault();
+        cargarProducto()
+        setTimeout(() => {
+            location.reload()
+        }, 1500);
+    }
 
     const cargarProducto=()=>{
-        setNewProduct({
+        let datos = {
             "marca":document.getElementById('marca').value,
             "nombre":document.getElementById('nombre').value,
             "descripcion":document.getElementById('descripcion').value,
             "foto":document.getElementById('foto').value,
             "precio":document.getElementById('precio').value,
-            "descuento.hayDescuento":document.getElementById('descuento').value!=''?true:false,
-            "descuento.totalDescuento":document.getElementById('descuento').value!=''&&parseFloat(document.getElementById('descuento').value),
+            "hayDescuento":document.getElementById('descuento').value!=''?true:false,
+            "totalDescuento":document.getElementById('descuento').value!=''&&parseFloat(document.getElementById('descuento').value),
             "stock":document.getElementById('stock').value,
-            "id":listCategories.length+1,
             "status":document.getElementById('nuevoUsado').value,
             "categorie":document.getElementById('categoria').value,
-        })
-    }
-
-    const cargarDatos=(event)=>{
-        event.preventDefault();
-        setCargar(true)
+            "vendedor":user.nickname,
+        }
+        agregarProductoFirebase(datos)
     }
 
     return(
         <>
-        <form onSubmit={cargarDatos}>
+        <form onSubmit={preventDefaultSubmit}>
             <div class="add-product">
                 <div className="block-inputs">
                     <label for="nombre">Agregar nombre
@@ -97,12 +80,11 @@ export const CreateProduct=()=>{
                         <input type="text" id="foto" name="foto"/>
                     </label>
                 </div>
-                <button onClick={()=>{alert("¡Create!")}} class="btn-enviar">
+                <button class="btn-enviar">
                     <input value="Agregar" type="submit"/>
                 </button>
             </div>
         </form>
-        <p>{newProduct.nombre}</p>
         </>
     )
 }
