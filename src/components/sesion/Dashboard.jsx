@@ -3,23 +3,22 @@ import { useState, useEffect, useContext } from "react";
 import { ContextVariables } from "../ContextVariables";
 import { MostrarProductoLista } from "../productos/MostrarProductoLista";
 import "./dashboard.css";
-import { Link, useParams } from "react-router-dom";
-import { CreateProduct } from "./CRUD/createProduct";
+import { CreateProduct } from "./CRUD/CreateProduct";
 import { DeleteProduct } from "./CRUD/deleteProduct";
 import { ModifyProduct } from "./CRUD/ModifyProduct";
+
 export const Dashboard=()=>{
     const [productoPerfil,setProductoPerfil] = useState([])
     const [option,setOption] = useState('cargar')
-    const {user,isAuthenticated,isLoading} = useAuth0()
-    const {listCategories, actualizarListCategories,reiniciarListCategories}=useContext(ContextVariables);
+    const {user,isAuthenticated} = useAuth0()
+    const {datos, listCategories}=useContext(ContextVariables);
 
-    const IdPerfil=useParams()
     const CargarData=()=>{
             switch (option) {
                 case 'cargar':
                     return(
-                        productoPerfil.map((e)=>{
-                            return(<MostrarProductoLista producto={e}/>)
+                        datos.map((e)=>{
+                            return(<MostrarProductoLista producto={e} key={datos.indexOf(e)}/>)
                         })
                     )
                     break;

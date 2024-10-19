@@ -10,7 +10,7 @@ export const ShowBoxCategories=()=>{
         <div className="categories-boxes">
             {box.map((e)=>{
                 return(
-                    <Link to={`/categoria/${e}`}>
+                    <Link to={`/categoria/${e}`} key={box.indexOf(e)}>
                         <div className="box">
                             {e}
                         </div>

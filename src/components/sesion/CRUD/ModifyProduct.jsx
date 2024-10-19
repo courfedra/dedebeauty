@@ -1,14 +1,13 @@
 import "./CRUD.css"
 import { useContext,useState, useEffect} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Render from "react-dom"
 import { ContextVariables } from "../../ContextVariables";
 export const ModifyProduct=()=>{
     const {user} = useAuth0()
-    const {listCategories}=useContext(ContextVariables);
-    let prods = listCategories.filter((e)=>e.vendedor==user.nickname)
+    const {datos}=useContext(ContextVariables);
+    let prods = datos.filter((e)=>e.vendedor==user.nickname)
     const [idPopUp,setIdPopUp]=useState(1000)
-    const [prodPopUp,setProdPopUp]=useState(prods[0])
+    const [prodPopUp,setProdPopUp]=useState([])
     const [showPopUp,setShowPopUp]=useState('popUpHidden')
 
     useEffect(() => {
@@ -23,7 +22,12 @@ export const ModifyProduct=()=>{
         return(
             prodPopUp
             &&<div className={showPopUp}>
-                <button className="btn-close-popup" onClick={()=>setShowPopUp('popUpHidden')}>Cerrar</button>
+                <button
+                    className="btn-close-popup"
+                    onClick={()=>{
+                        setShowPopUp('popUpHidden')
+                        setProdPopUp([])
+                    }}>Cerrar</button>
                 <form>
                     <div className="infoPopUp">
                         <div className="popUpMiniBox">
@@ -53,12 +57,15 @@ export const ModifyProduct=()=>{
                             <label for="foto">Foto
                                 <input type="text" placeholder={prodPopUp.foto} id ="foto" name="foto"/>
                             </label>
-                            <label for="hayDescuento">Hay Descuento
-                                <input type="text" placeholder={prodPopUp.descuento.hayDescuento?'True':'False'} id ="hayDescuento" name="hayDescuento"/>
-                            </label>
-                            <label for="totalDescuento">Total Descuento
-                                <input type="text" placeholder={prodPopUp.descuento.totalDescuento} id ="totalDescuento" name="totalDescuento"/>
-                            </label>
+                            {
+                                prodPopUp.hayDescuento
+                                ?<label for="totalDescuento">Total Descuento
+                                    <input type="text" placeholder={prodPopUp.totalDescuento} id ="totalDescuento" name="totalDescuento"/>
+                                 </label>
+                                :<label for="hayDescuento">Hay Descuento
+                                    <input type="text" placeholder={'Sin descuento'} id ="hayDescuento" name="hayDescuento"/>
+                                 </label>
+                            }
                         </div>
                     </div>
                 </form>
@@ -67,8 +74,7 @@ export const ModifyProduct=()=>{
                     onClick={()=>{
                         setShowPopUp('popUpHidden');
                         alert('Modificado');
-                    }}>
-                    Modificar
+                    }}>Modificar
                 </button>
             </div>
         )
@@ -79,7 +85,7 @@ export const ModifyProduct=()=>{
             <div className="update-product">
                 {prods.map((e)=>{
                     return(
-                        <div className="product-line">
+                        <div key={prods.indexOf(e)} className="product-line">
                             <div className="product-info">
                                 <div className="minibox-date">
                                     <p>{e.marca}</p>

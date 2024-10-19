@@ -37,7 +37,7 @@ export const CreateProduct=()=>{
     return(
         <>
         <form onSubmit={preventDefaultSubmit}>
-            <div class="add-product">
+            <div className="add-product">
                 <div className="block-inputs">
                     <label for="nombre">Agregar nombre
                         <input type="text" id ="nombre" name="nombre"/>
@@ -71,7 +71,7 @@ export const CreateProduct=()=>{
                         <select id="categoria" name="categoria">
                             {categorias.map((e)=>{
                                 return(
-                                    <option value={e}>{e}</option>
+                                    <option key={categorias.indexOf(e)} value={e}>{e}</option>
                                 )
                             })}
                         </select>
@@ -80,7 +80,7 @@ export const CreateProduct=()=>{
                         <input type="text" id="foto" name="foto"/>
                     </label>
                 </div>
-                <button class="btn-enviar">
+                <button className="btn-enviar">
                     <input value="Agregar" type="submit"/>
                 </button>
             </div>

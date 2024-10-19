@@ -7,7 +7,7 @@ export function CategoriesList(prod){
 }
 
 export function OfferList(prod){
-    let list=prod.filter((e)=>e.descuento.hayDescuento==true);
+    let list=prod.filter((e)=>e.hayDescuento==true);
     return list;
 
 }

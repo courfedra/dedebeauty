@@ -23,13 +23,13 @@ export const ProductoDetalle=({producto})=>{
                             <h3>{producto.nombre}</h3>
                         </div>
                         <div className="price-box">
-                            {producto.descuento.hayDescuento
+                            {producto.hayDescuento
                             ?<>
                                 <p className="price-false">
                                     ${producto.precio}
                                 </p>
                                 <p className="price-true">
-                                    ${porcentaje(producto.precio,producto.descuento.totalDescuento)}
+                                    ${porcentaje(producto.precio,producto.totalDescuento)}
                                 </p>
                             </>
                             :<>

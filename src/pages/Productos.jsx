@@ -7,7 +7,7 @@ import { useState, useEffect, useContext } from "react";
 import { ContextVariables } from "../components/ContextVariables";
 
 export const Productos = () => {
-    const {listCategories, actualizarListCategories,reiniciarListCategories}=useContext(ContextVariables);
+    const {datos,listCategories, actualizarListCategories,reiniciarListCategories}=useContext(ContextVariables);
     useEffect(()=>{
         reiniciarListCategories();
     },[])
@@ -18,11 +18,11 @@ export const Productos = () => {
             </div>
             <div className="categories-products-section">
                 <div className="categories-products">
-                    <ShowCategories prod={productos}/>
+                    <ShowCategories prod={datos}/>
                 </div>
                 <div className="productos">
-                    {listCategories.map((e)=>{
-                        return(<MostrarProductoLista key={listCategories.indexOf(e)} producto={e} />)
+                    {datos.map((e)=>{
+                        return(<MostrarProductoLista key={datos.indexOf(e)} producto={e} />)
                     })
                     }
                 </div>

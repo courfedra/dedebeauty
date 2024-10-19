@@ -21,7 +21,7 @@ export const MostrarCategoriasProducto=()=>{
             <div className="categories-products">
                 <div className="categories-products-cards">
                     {prods.map((e)=>{
-                        return(<MostrarProductoLista producto={e}/>)
+                        return(<MostrarProductoLista producto={e} key={prods.indexOf(e)}/>)
                     })}
                 </div>
             </div>

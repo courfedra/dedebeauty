@@ -1,10 +1,13 @@
-import { createContext,useState } from "react";
+import { createContext,useState,useEffect } from "react";
 import productos from "../assets/products/products.json"
+import { db } from "../utils/firebaseConfig";
+import { collection, getDocs,query} from "firebase/firestore";
 
 export const ContextVariables = createContext();
 
 const ContextVariablesProvider = ({children}) =>{
     const [listCategories,setListCategories]=useState([])
+    const [datos,setDatos]=useState([])
     //vuelve a llenar el listCategories con todos los productos del json
     const reiniciarListCategories=(()=>{
         setListCategories(productos)
@@ -16,7 +19,7 @@ const ContextVariablesProvider = ({children}) =>{
     }
     //devuelve los productos que tienen oferta TRUE
     const mostrarOfertas=(prod)=>{
-        let aux=prod.filter((e)=>e.descuento.hayDescuento==true)
+        let aux=prod.filter((e)=>e.hayDescuento==true)
         setListCategories(aux)
     }
     const agregarProducto=(prod)=>{
@@ -27,10 +30,28 @@ const ContextVariablesProvider = ({children}) =>{
         )
         console.log(listCategories, "despues de cargar")
     }
+    //componentDidMount
+    useEffect(()=>{
+        const dbAsync= async()=>{
+            //para cambiar categorias
+            let q=query(collection(db, "productos"))
+            const querySnapshot = await getDocs(q);
+            //metodo "docs" convierte array de documentos a array de objetos
+            const dataFromFirestone = querySnapshot.docs.map(item=>({
+                id:item.id,
+                ...item.data()
+            }))
+            return dataFromFirestone;
+        }
+        dbAsync()
+            .then(result=>setDatos(result))
+            .catch(err=>console.log(err))
+    },[]);
 
 return(
     <ContextVariables.Provider
         value={{
+            datos,
             agregarProducto,
             listCategories,
             actualizarListCategories,

@@ -3,26 +3,12 @@ import bannerHero from "../assets/dedeBeautyBannerHero.jpg"
 import bannerCategorias from "../assets/categoriasBanner.jpg"
 import bannerOffer from "../assets/blackFridayDedeBeauty.png"
 import productos from "../assets/products/products.json"
+import { useContext } from "react"
 import { ShowOfferProductos } from "../components/functions/ShowOfferProducts"
 import { ShowBoxCategories } from "../components/functions/ShowBoxCategories"
-import { db,analytics } from "../utils/firebaseConfig"
-import { increment,updateDoc,doc,setDoc,collection, serverTimestamp } from "firebase/firestore";
-
+import { ContextVariables } from "../components/ContextVariables"
 export const Inicio = () => {
-  console.log(db)
-
-  const createOrderInFirestore = async ()=>{
-    const newOrderRef = doc(collection(db, "productos"));
-    return newOrderRef;
-  }
-
-  createOrderInFirestore()
-  .then(result=>{
-      //actualizar stock deproductos comrpados
-      console.log(result)
-  })
-  .catch(err=>console.log(err))
-
+  const {datos, listCategories, actualizarListCategories,reiniciarListCategories}=useContext(ContextVariables);
   return (
     <div className="container-home">
       <div className="banner-home">
@@ -36,7 +22,7 @@ export const Inicio = () => {
           <img src={bannerOffer} alt="Banner Sale"/>
         </div>
         <div className="offer-products">
-          <ShowOfferProductos prod={productos}/>
+          <ShowOfferProductos prod={datos}/>
         </div>
       </div>
       <div className="categories-home">
