@@ -31,7 +31,7 @@ export const CreateProduct=()=>{
             "categorie":document.getElementById('categoria').value,
             "vendedor":user.nickname,
         }
-        agregarProductoFirebase(datos)
+        agregarProducto(datos)
     }
 
     return(

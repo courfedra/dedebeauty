@@ -2,14 +2,16 @@ import "./CRUD.css"
 import { useContext,useState, useEffect} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { ContextVariables } from "../../ContextVariables";
+import { storage } from "../../../utils/firebaseConfig";
+import { ref, uploadBytes,getDownloadURL } from "firebase/storage";
 export const ModifyProduct=()=>{
     const {user} = useAuth0()
-    const {datos}=useContext(ContextVariables);
+    const {datos,modificarProducto}=useContext(ContextVariables);
     let prods = datos.filter((e)=>e.vendedor==user.nickname)
     const [idPopUp,setIdPopUp]=useState(1000)
-    const [prodPopUp,setProdPopUp]=useState([])
+    const [prodPopUp,setProdPopUp]=useState({})
     const [showPopUp,setShowPopUp]=useState('popUpHidden')
-
+    const [datosImg,setDatosImg]=useState({})
     useEffect(() => {
         setProdPopUp(AbrirPopUp(idPopUp))
         PopUpUpdate()
@@ -18,6 +20,33 @@ export const ModifyProduct=()=>{
     const AbrirPopUp=(id)=>{
         return prods.find((e)=>e.id==id)
     }
+
+    const actualizarNuevaInfo=()=>{
+        if(document.getElementById('marca').value!=''){prodPopUp.marca=document.getElementById('marca').value}
+        if(prodPopUp.nombre=document.getElementById('nombre').value!=''){prodPopUp.nombre=document.getElementById('nombre').value}
+        if(prodPopUp.precio=document.getElementById('precio').value!=''){prodPopUp.precio=document.getElementById('precio').value}
+        if(prodPopUp.stock=document.getElementById('stock').value!=''){prodPopUp.stock=document.getElementById('stock').value}
+        if(prodPopUp.status=document.getElementById('status').value!=''){prodPopUp.status=document.getElementById('status').value}
+        if(prodPopUp.categorie=document.getElementById('categorie').value!=''){prodPopUp.categorie=document.getElementById('categorie').value}
+        if(prodPopUp.descripcion=document.getElementById('descripcion').value!=''){prodPopUp.descripcion=document.getElementById('descripcion').value}
+        if(document.getElementById('descuento').value!=''){prodPopUp.hayDescuento=document.getElementById('descuento').value!=''?true:false}
+        if(document.getElementById('descuento').value!=''){prodPopUp.totalDescuento=document.getElementById('descuento').value!=''&&parseFloat(document.getElementById('descuento').value)}
+        if(prodPopUp.vendedor=user.nickname!=''){prodPopUp.vendedor=user.nickname}
+    }
+
+    const CargarDatos = async (e) => {
+        e.preventDefault()
+        actualizarNuevaInfo()
+        const result = await cargarImg(datosImg.archivo,datosImg.nombreArchivo,datosImg.creadorArchivo)
+        prodPopUp.foto = await getDownloadURL(ref(storage,`imagenes-productos/${datosImg.creadorArchivo}/${datosImg.nombreArchivo}`))
+        console.log(prodPopUp)
+        modificarProducto(prodPopUp)
+    }
+    const cargarImg= async (file,fileName,route)=>{
+        const storageRef = ref(storage, `imagenes-productos/${route}/${fileName}`);
+        return await uploadBytes(storageRef,file)
+    }
+
     const PopUpUpdate=()=>{
         return(
             prodPopUp
@@ -28,7 +57,7 @@ export const ModifyProduct=()=>{
                         setShowPopUp('popUpHidden')
                         setProdPopUp([])
                     }}>Cerrar</button>
-                <form>
+                <form onSubmit={CargarDatos}>
                     <div className="infoPopUp">
                         <div className="popUpMiniBox">
                             <label for="marca">Marca
@@ -55,27 +84,36 @@ export const ModifyProduct=()=>{
                                 <textarea type="text" placeholder={prodPopUp.descripcion} id ="descripcion" name="descripcion"/>
                             </label>
                             <label for="foto">Foto
-                                <input type="text" placeholder={prodPopUp.foto} id ="foto" name="foto"/>
+                                <input
+                                    type="file"
+                                    onChange={()=>{
+                                        setDatosImg({
+                                            'archivo':document.getElementById('foto').files[0],
+                                            'nombreArchivo':document.getElementById('foto').files[0].name,
+                                            'creadorArchivo':user.nickname
+                                        })
+                                    }}
+                                    id ="foto"
+                                    name="foto"/>
                             </label>
                             {
                                 prodPopUp.hayDescuento
                                 ?<label for="totalDescuento">Total Descuento
-                                    <input type="text" placeholder={prodPopUp.totalDescuento} id ="totalDescuento" name="totalDescuento"/>
+                                    <input type="text" placeholder={`${prodPopUp.totalDescuento}%`} id ="descuento" name="totalDescuento"/>
                                  </label>
-                                :<label for="hayDescuento">Hay Descuento
-                                    <input type="text" placeholder={'Sin descuento'} id ="hayDescuento" name="hayDescuento"/>
+                                :<label for="hayDescuento">Sin descuento
+                                    <input type="text" placeholder={'Agregar descuento'} id ="descuento" name="hayDescuento"/>
                                  </label>
                             }
                         </div>
                     </div>
-                </form>
                 <button
                     className="btn-save-info"
                     onClick={()=>{
                         setShowPopUp('popUpHidden');
-                        alert('Modificado');
                     }}>Modificar
                 </button>
+                </form>
             </div>
         )
     }

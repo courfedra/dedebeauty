@@ -1,13 +1,12 @@
 import { createContext,useState,useEffect } from "react";
 import productos from "../assets/products/products.json"
-import { db } from "../utils/firebaseConfig";
-import { collection, getDocs,query} from "firebase/firestore";
+import { db, agregarProductoFirebase, modificarProductosFirebase } from "../utils/firebaseConfig";
+import { collection, getDocs,query,addDoc} from "firebase/firestore";
 
 export const ContextVariables = createContext();
 
 const ContextVariablesProvider = ({children}) =>{
     const [listCategories,setListCategories]=useState([])
-    const [datos,setDatos]=useState([])
     //vuelve a llenar el listCategories con todos los productos del json
     const reiniciarListCategories=(()=>{
         setListCategories(productos)
@@ -22,14 +21,23 @@ const ContextVariablesProvider = ({children}) =>{
         let aux=prod.filter((e)=>e.hayDescuento==true)
         setListCategories(aux)
     }
-    const agregarProducto=(prod)=>{
-        console.log(listCategories, "antes de cargar")
-        setListCategories(
-            ...listCategories,
-            prod
-        )
-        console.log(listCategories, "despues de cargar")
+
+//configurado a firebase
+
+    const [datos,setDatos]=useState([])
+    //agregar productos a firestore
+    const agregarProducto = (datosNuevos) => {
+        console.log('Agregando')
+        agregarProductoFirebase(datosNuevos)
+        console.log('Agregado')
     }
+    //modificar producto en firestore
+    const modificarProducto = (datosNuevos) =>{
+        console.log("Modificando")
+        modificarProductosFirebase(datosNuevos)
+        console.log('modificado')
+    }
+
     //componentDidMount
     useEffect(()=>{
         const dbAsync= async()=>{
@@ -53,6 +61,7 @@ return(
         value={{
             datos,
             agregarProducto,
+            modificarProducto,
             listCategories,
             actualizarListCategories,
             reiniciarListCategories,
