@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { getAnalytics } from "firebase/analytics";
-import { getStorage, ref, uploadBytes,uploadString, getMetadata } from "firebase/storage";
+import { getStorage } from "firebase/storage";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, doc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, doc, getDoc, updateDoc } from "firebase/firestore";
+import { QuerySnapshot } from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -43,26 +44,13 @@ export async function agregarProductoFirebase (data){
   }
 }
 
+
 export async function modificarProductosFirebase (datosNuevos){
-  const querySnapshot = await getDocs(collection(db, "productos"));
-  querySnapshot.forEach((doc) => {
-    if (doc.id==datosNuevos.id){
-      doc.data().marca=datosNuevos.marca
-      /*
-      if (doc.data().marca!=datosNuevos.marca){doc.data().marca=datosNuevos.marca,console.log('Se modifico la marca ')}
-      if (doc.data().nombre!=datosNuevos.nombre){doc.data().nombre=datosNuevos.nombre,console.log('Se modifico el nombre ')}
-      if(doc.data().descripcion!=datosNuevos.descripcion){doc.data().descripcion=datosNuevos.descripcion,console.log('Se modifico la descripcion ')}
-      if(doc.data().foto!=datosNuevos.foto){doc.data().foto=datosNuevos.foto,console.log('Se modifico la foto')}
-      if(doc.data().precio!=datosNuevos.precio){doc.data().precio=datosNuevos.precio,console.log('Se modifico el precio')}
-      if(doc.data().hayDescuento!=datosNuevos.hayDescuento){doc.data().hayDescuento=datosNuevos.hayDescuento,console.log('Se modifico el hayDescuento ')}
-      if(doc.data().totalDescuento!=datosNuevos.totalDescuento){doc.data().totalDescuento=datosNuevos.totalDescuento,console.log('Se modifico el totalDescuento ')}
-      if(doc.data().stock!=datosNuevos.stock){doc.data().stock=datosNuevos.stock,console.log('Se modifico el stock ')}
-      if(doc.data().status!=datosNuevos.status){doc.data().status=datosNuevos.status,console.log('Se modifico el status ')}
-      if(doc.data().categorie!=datosNuevos.categorie){doc.data().categorie=datosNuevos.categorie,console.log('Se modifico el categorie')}
-      if(doc.data().vendedor!=datosNuevos.vendedor){doc.data().vendedor=datosNuevos.vendedor,console.log('Se modifico el vendedor ')}
-      */
-    }
-  });
+  const docRef = doc(db, "productos", datosNuevos.id);
+  const docSnap = await getDoc(docRef);
+  console.log(datosNuevos)
+  console.log(docSnap.data())
+  await updateDoc(docSnap,datosNuevos)
 
 }
 

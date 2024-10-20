@@ -21,25 +21,10 @@ export const ModifyProduct=()=>{
         return prods.find((e)=>e.id==id)
     }
 
-    const actualizarNuevaInfo=()=>{
-        if(document.getElementById('marca').value!=''){prodPopUp.marca=document.getElementById('marca').value}
-        if(prodPopUp.nombre=document.getElementById('nombre').value!=''){prodPopUp.nombre=document.getElementById('nombre').value}
-        if(prodPopUp.precio=document.getElementById('precio').value!=''){prodPopUp.precio=document.getElementById('precio').value}
-        if(prodPopUp.stock=document.getElementById('stock').value!=''){prodPopUp.stock=document.getElementById('stock').value}
-        if(prodPopUp.status=document.getElementById('status').value!=''){prodPopUp.status=document.getElementById('status').value}
-        if(prodPopUp.categorie=document.getElementById('categorie').value!=''){prodPopUp.categorie=document.getElementById('categorie').value}
-        if(prodPopUp.descripcion=document.getElementById('descripcion').value!=''){prodPopUp.descripcion=document.getElementById('descripcion').value}
-        if(document.getElementById('descuento').value!=''){prodPopUp.hayDescuento=document.getElementById('descuento').value!=''?true:false}
-        if(document.getElementById('descuento').value!=''){prodPopUp.totalDescuento=document.getElementById('descuento').value!=''&&parseFloat(document.getElementById('descuento').value)}
-        if(prodPopUp.vendedor=user.nickname!=''){prodPopUp.vendedor=user.nickname}
-    }
-
     const CargarDatos = async (e) => {
         e.preventDefault()
-        actualizarNuevaInfo()
         const result = await cargarImg(datosImg.archivo,datosImg.nombreArchivo,datosImg.creadorArchivo)
         prodPopUp.foto = await getDownloadURL(ref(storage,`imagenes-productos/${datosImg.creadorArchivo}/${datosImg.nombreArchivo}`))
-        console.log(prodPopUp)
         modificarProducto(prodPopUp)
     }
     const cargarImg= async (file,fileName,route)=>{
@@ -61,31 +46,58 @@ export const ModifyProduct=()=>{
                     <div className="infoPopUp">
                         <div className="popUpMiniBox">
                             <label for="marca">Marca
-                                <input type="text" placeholder={prodPopUp.marca} id ="marca" name="marca"/>
+                                <input type="text" placeholder={prodPopUp.marca} id ="marca" name="marca"
+                                    onKeyDown={()=>{
+                                        prodPopUp.marca=document.getElementById('marca').value
+                                    }}
+                                />
                             </label>
                             <label for="nombre">Nombre
-                                <input type="text" placeholder={prodPopUp.nombre} id ="nombre" name="nombre"/>
+                                <input type="text" placeholder={prodPopUp.nombre} id ="nombre" name="nombre"
+                                    onKeyDown={()=>{
+                                        prodPopUp.nombre=document.getElementById('nombre').value
+                                    }}
+                                />
                             </label>
                             <label for="precio">Precio
-                                <input type="text" placeholder={prodPopUp.precio} id ="precio" name="precio"/>
+                                <input type="text" placeholder={prodPopUp.precio} id ="precio" name="precio"
+                                    onKeyDown={()=>{
+                                        prodPopUp.precio=document.getElementById('precio').value
+                                    }}
+                                />
                             </label>
                             <label for="stock">stock
-                                <input type="text" placeholder={prodPopUp.stock} id ="stock" name="stock"/>
+                                <input type="text" placeholder={prodPopUp.stock} id ="stock" name="stock"
+                                    onKeyDown={()=>{
+                                        prodPopUp.stock=document.getElementById('stock').value
+                                    }}
+                                />
                             </label>
                             <label for="status">status
-                                <input type="text" placeholder={prodPopUp.status} id ="status" name="status"/>
+                                <input type="text" placeholder={prodPopUp.status} id ="status" name="status"
+                                    onKeyDown={()=>{
+                                        prodPopUp.status=document.getElementById('status').value
+                                    }}
+                                />
                             </label>
                             <label for="nombre">categorie
-                                <input type="text" placeholder={prodPopUp.categorie} id ="categorie" name="categorie"/>
+                                <input type="text" placeholder={prodPopUp.categorie} id ="categorie" name="categorie"
+                                    onKeyDown={()=>{
+                                        prodPopUp.categorie=document.getElementById('categorie').value
+                                    }}
+                                />
                             </label>
                         </div>
                         <div className="popUpMiniBox">
                             <label for="descripcion">Descripcion
-                                <textarea type="text" placeholder={prodPopUp.descripcion} id ="descripcion" name="descripcion"/>
+                                <textarea type="text" placeholder={prodPopUp.descripcion} id ="descripcion" name="descripcion"
+                                    onKeyDown={()=>{
+                                        prodPopUp.descripcion=document.getElementById('descripcion').value
+                                    }}
+                                />
                             </label>
                             <label for="foto">Foto
-                                <input
-                                    type="file"
+                                <input type="file" id ="foto" name="foto"
                                     onChange={()=>{
                                         setDatosImg({
                                             'archivo':document.getElementById('foto').files[0],
@@ -93,17 +105,36 @@ export const ModifyProduct=()=>{
                                             'creadorArchivo':user.nickname
                                         })
                                     }}
-                                    id ="foto"
-                                    name="foto"/>
+                                />
                             </label>
                             {
                                 prodPopUp.hayDescuento
                                 ?<label for="totalDescuento">Total Descuento
-                                    <input type="text" placeholder={`${prodPopUp.totalDescuento}%`} id ="descuento" name="totalDescuento"/>
+                                    <input type="text" placeholder={`${prodPopUp.totalDescuento}%`} id ="descuento" name="totalDescuento"
+                                        onKeyDown={()=>{
+                                            if (document.getElementById('descripcion').value!=''||0){
+                                                prodPopUp.totalDescuento=document.getElementById('descripcion').value
+                                                prodPopUp.hayDescuento=true
+                                            }else{
+                                                prodPopUp.totalDescuento=0
+                                                prodPopUp.hayDescuento=false
+                                            }
+                                        }}
+                                    />
                                  </label>
                                 :<label for="hayDescuento">Sin descuento
-                                    <input type="text" placeholder={'Agregar descuento'} id ="descuento" name="hayDescuento"/>
-                                 </label>
+                                    <input type="text" placeholder={'Agregar descuento'} id ="descuento" name="hayDescuento"
+                                        onKeyDown={()=>{
+                                            if (document.getElementById('descripcion').value!=''||0){
+                                                prodPopUp.totalDescuento=document.getElementById('descripcion').value
+                                                prodPopUp.hayDescuento=true
+                                            }else{
+                                                prodPopUp.totalDescuento=0
+                                                prodPopUp.hayDescuento=false
+                                            }
+                                        }}
+                                    />
+                                </label>
                             }
                         </div>
                     </div>
