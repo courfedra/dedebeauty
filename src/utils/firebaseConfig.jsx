@@ -47,10 +47,6 @@ export async function agregarProductoFirebase (data){
 
 export async function modificarProductosFirebase (datosNuevos){
   const docRef = doc(db, "productos", datosNuevos.id);
-  const docSnap = await getDoc(docRef);
-  console.log(datosNuevos)
-  console.log(docSnap.data())
-  await updateDoc(docSnap,datosNuevos)
-
+  await updateDoc(docRef,datosNuevos)
 }
 

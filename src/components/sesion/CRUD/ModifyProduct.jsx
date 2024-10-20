@@ -23,9 +23,12 @@ export const ModifyProduct=()=>{
 
     const CargarDatos = async (e) => {
         e.preventDefault()
-        const result = await cargarImg(datosImg.archivo,datosImg.nombreArchivo,datosImg.creadorArchivo)
-        prodPopUp.foto = await getDownloadURL(ref(storage,`imagenes-productos/${datosImg.creadorArchivo}/${datosImg.nombreArchivo}`))
-        modificarProducto(prodPopUp)
+        if (datosImg.nombreArchivo!=undefined){
+            const result = await cargarImg(datosImg.archivo,datosImg.nombreArchivo,datosImg.creadorArchivo)
+            prodPopUp.foto = await getDownloadURL(ref(storage,`imagenes-productos/${datosImg.creadorArchivo}/${datosImg.nombreArchivo}`))
+        }
+            modificarProducto(prodPopUp)
+            setProdPopUp(null)
     }
     const cargarImg= async (file,fileName,route)=>{
         const storageRef = ref(storage, `imagenes-productos/${route}/${fileName}`);
@@ -112,8 +115,8 @@ export const ModifyProduct=()=>{
                                 ?<label for="totalDescuento">Total Descuento
                                     <input type="text" placeholder={`${prodPopUp.totalDescuento}%`} id ="descuento" name="totalDescuento"
                                         onKeyDown={()=>{
-                                            if (document.getElementById('descripcion').value!=''||0){
-                                                prodPopUp.totalDescuento=document.getElementById('descripcion').value
+                                            if (document.getElementById('descuento').value!=''||0){
+                                                prodPopUp.totalDescuento=document.getElementById('descuento').value
                                                 prodPopUp.hayDescuento=true
                                             }else{
                                                 prodPopUp.totalDescuento=0
@@ -125,8 +128,8 @@ export const ModifyProduct=()=>{
                                 :<label for="hayDescuento">Sin descuento
                                     <input type="text" placeholder={'Agregar descuento'} id ="descuento" name="hayDescuento"
                                         onKeyDown={()=>{
-                                            if (document.getElementById('descripcion').value!=''||0){
-                                                prodPopUp.totalDescuento=document.getElementById('descripcion').value
+                                            if (document.getElementById('descuento').value!=''||0){
+                                                prodPopUp.totalDescuento=document.getElementById('descuento').value
                                                 prodPopUp.hayDescuento=true
                                             }else{
                                                 prodPopUp.totalDescuento=0
